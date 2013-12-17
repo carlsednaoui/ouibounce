@@ -3,11 +3,13 @@ console.log('starting....');
 function ouibounce() {
   var direction = null,
           lastY = null,
-          fired = false;
+          fired = false,
+          scrolling = false;
 
   // display modal or alert message
   function showModal(text) {
     if (fired === false) {
+      console.log(text);
       alert(text);
       fired = true;
     }
@@ -26,15 +28,23 @@ function ouibounce() {
       showModal('passed top 10');
     }
 
+    // make sure user is moving mouse
+    // not just scrolling
+    window.onscroll = function(event) {
+      scrolling = true;
+    };
+
     // check if mouse is intending to exit
     // look at mouse speed and mouse direction
-    if (Math.abs(lastY - event.pageY) > 70 && direction == 'up') {
+    if (Math.abs(lastY - event.pageY) > 50 
+        && direction == 'up' 
+        && scrolling === false) {
       showModal('mouse is moving fast');
     }
 
-
     // update mouse position
-    lastY = event.pageY;
+    lastY     = event.pageY;
+    scrolling = false;
   });
 }
 
