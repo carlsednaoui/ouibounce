@@ -1,6 +1,4 @@
-console.log('starting....');
-
-function ouibounce() {
+(function ouibounce() {
   var direction     = null,
           lastY     = null,
           fired     = false,
@@ -49,6 +47,4 @@ function ouibounce() {
     lastY     = event.pageY;
     scrolling = false;
   });
-}
-
-ouibounce();
+})();
