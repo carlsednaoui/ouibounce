@@ -1,8 +1,12 @@
 # OuiBounce
-
 OuiBounce is an open sourced library inspired by [BounceExchange](http://bounceexchange.com/). As mentioned on their website "Imagine Having The Power To Turn Abandoning Visitors Into Customers."
 
 With OuiBounce you can fire an event (usually a modal with a marketing message + email capture form) before a user leaves your website.
+
+## Notes
+This was quickly hacked together and may not behave as expected.
+
+Pull requests welcome :)
 
 ## Dependencies
 jQuery ~2.0.1
