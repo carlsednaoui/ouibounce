@@ -24,7 +24,9 @@ function ouibounce() {
     }
 
     // check if mouse is passing top 10px
-    if (event.pageY < 10 && direction == 'up') {
+    // relative to the current window position
+    // ensure that mouse is moving upwards
+    if (event.pageY < (document.body.scrollTop + 10) && direction == 'up') {
       showModal('passed top 10');
     }
 
@@ -36,6 +38,7 @@ function ouibounce() {
 
     // check if mouse is intending to exit
     // look at mouse speed and mouse direction
+    // over 50px per event emitted == FIRE!
     if (Math.abs(lastY - event.pageY) > 50 
         && direction == 'up' 
         && scrolling === false) {
@@ -43,6 +46,7 @@ function ouibounce() {
     }
 
     // update mouse position
+    // reset scrolling
     lastY     = event.pageY;
     scrolling = false;
   });
