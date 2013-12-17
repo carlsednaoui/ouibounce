@@ -1,9 +1,9 @@
 console.log('starting....');
 
 function ouibounce() {
-  var direction = null,
-          lastY = null,
-          fired = false,
+  var direction     = null,
+          lastY     = null,
+          fired     = false,
           scrolling = false;
 
   // display modal or alert message
