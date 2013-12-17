@@ -38,8 +38,7 @@ function ouibounce() {
 
     // check if mouse is intending to exit
     // look at mouse speed and mouse direction
-    // over 50px per event emitted == FIRE!
-    if (Math.abs(lastY - event.pageY) > 40 
+    if (Math.abs(lastY - event.pageY) > 45
         && direction == 'up' 
         && scrolling === false) {
       showModal('mouse is moving fast');
