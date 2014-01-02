@@ -9,6 +9,8 @@
 
   <body>
     <p>This is the sandbox, where we sell boxes of sand.</p>
+    <p>To install this bookmarklet, simply drag <a href='javascript:((function(){function o(e){if(r===false){console.log(e);alert(e);r=true}}var t=null,n=null,r=false,i=window.innerHeight,s=(new Date).getTime();scrolling=false;$("html").on("mousemove",function(e){if(e.pageY<n){t="up"}else{t=null}if(e.pageY<document.body.scrollTop+10&&t=="up"){o("passed top 10")}window.onscroll=function(e){scrolling=true};var r=(new Date).getTime(),u=r-s;distance=n-e.pageY;var a=distance/u;if(t=="up"&&a>i/125&&scrolling===false){o("mouse is moving fast "+a)}n=e.pageY;scrolling=false;s=r})})())();'>OuiBounce</a> to your bookmark bar.</p>
+
     <script src="ouibounce.js"></script>
   </body>
 </html>
