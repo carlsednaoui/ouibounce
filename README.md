@@ -1,15 +1,39 @@
 # OuiBounce
-OuiBounce is an open sourced library inspired by [BounceExchange](http://bounceexchange.com/). As mentioned on their website "Imagine Having The Power To Turn Abandoning Visitors Into Customers."
+OuiBounce is <s>an open sourced library</s> a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
 
-With OuiBounce you can fire an event (usually a modal with a marketing message + email capture form) before a user leaves your website.
+This project was inspired by [BounceExchange](http://bounceexchange.com/). With OuiBounce you can fire an event (usually display a modal with a marketing message + email capture form) before a user leaves your website.
 
 ## Notes
 This was quickly hacked together and may not behave as expected.
 
 Pull requests welcome :)
 
-## Dependencies
-jQuery ~2.0.1
+## Using OuiBounce
+- Include ouibounce.js
+- Include bootstrap_modal.css
+- Create your modal
+
+        <!-- OuiBounce Modal -->
+        <div class="modal fade" id="ouibounce-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                Place your marketing message here!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">No thanks</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+- Et voila! :)
+
+
+## Dependencies and credit
+OuiBounce depends on jQuery and uses [Bootstrap's](http://getbootstrap.com/javascript/#modals) modal JS & CSS.
+
+Thanks to [Zertosh](https://github.com/zertosh) for the help.
 
 ## License
 MIT
