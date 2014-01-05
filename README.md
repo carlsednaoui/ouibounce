@@ -1,5 +1,5 @@
 # OuiBounce
-OuiBounce is <s>an open sourced library</s> a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
+OuiBounce is ~~an open sourced library~~ a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
 
 This project was inspired by [BounceExchange](http://bounceexchange.com/). With OuiBounce you can fire an event (usually display a modal with a marketing message + email capture form) before a user leaves your website.
 
