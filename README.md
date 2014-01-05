@@ -9,6 +9,8 @@ This was quickly hacked together and may not behave as expected.
 Pull requests welcome :)
 
 ## Using OuiBounce
+[Live example](http://carlsednaoui.github.io/ouibounce)
+
 - Include ouibounce.js
 - Include bootstrap_modal.css
 - Create your modal
