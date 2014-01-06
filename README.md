@@ -19,7 +19,7 @@ If you're interested in this sort of 'value-driven marketing', check these out:
 - [Patio11 Training Course](https://training.kalzumeus.com/)
 
 ## Using OuiBounce
-[Live example](http://carlsednaoui.github.io/ouibounce)
+[Live example](http://colors.carlsednaoui.com/)
 
 - Include ouibounce.js
 - Include bootstrap_modal.css
