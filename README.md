@@ -1,12 +1,22 @@
 # OuiBounce
 OuiBounce is ~~an open sourced library~~ a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
 
-This project was inspired by [BounceExchange](http://bounceexchange.com/). With OuiBounce you can fire an event (usually display a modal with a marketing message + email capture form) before a user leaves your website.
+This project was inspired by [BounceExchange](http://bounceexchange.com/). With OuiBounce you can display a modal with a marketing message and an email capture form before a user leaves your website.
 
-## Notes
-This was quickly hacked together and may not behave as expected.
+## The philosophy behind this project
+I ask you to **please** use this project to provide value to your visitors. With tools like these it's very easy to create something spammy-looking that provides little value to prospective customers.
 
-Pull requests welcome :)
+Example taken from BounceExchange:
+
+![](http://i.imgur.com/ot2xNi4.png)
+![](http://i.imgur.com/tpQNyOr.png)
+
+This doesn't provide much value to the user. It would be **much** more valuable to offer a webinar teaching online marketing best practices to prospective customers. Towards the end of the webinar they could mention how other companies are benefiting by using their services.
+
+If you're interested in this sort of 'value-driven marketing', check these out:
+
+- [Unbouce Landing Page Conversion Course](http://do.thelandingpagecourse.com/)
+- [Patio11 Training Course](https://training.kalzumeus.com/)
 
 ## Using OuiBounce
 [Live example](http://carlsednaoui.github.io/ouibounce)
@@ -30,6 +40,9 @@ Pull requests welcome :)
         </div>
 
 - Et voila! :)
+
+## Notes
+This was quickly hacked together and may not behave as expected.
 
 
 ## Dependencies and credit
