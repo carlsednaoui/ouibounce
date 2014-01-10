@@ -4,21 +4,19 @@ This is ~~an open sourced library~~ a small project that turned up easier than e
 This project was inspired by [BounceExchange](http://bounceexchange.com/) and enables you to display a modal before a user leaves your website.
 
 ## The philosophy behind this project
-I ask you to **please** use this project to provide value to your visitors. With tools like these it's very easy to create something spammy-looking that provides little value to prospective customers.
+**Please** use this project to provide value to your visitors. With tools like these it's very easy to create something spammy-looking that provides little value to prospective customers.
 
-Example taken from BounceExchange:
+Quick disclaimer: I have nothing against Bounce Exchange. On the contrary, their business idea is brilliant... it's just that I would approach the banner's messaging very differently. Example:
 
 ![](http://i.imgur.com/ot2xNi4.png)
 ![](http://i.imgur.com/tpQNyOr.png)
 
 This doesn't provide much value to the user. It would be **much** more valuable to offer a webinar teaching online marketing best practices to prospective customers. Towards the end of the webinar they could mention how other companies are benefiting by using their services.
 
-If you're interested in this sort of 'value-driven marketing', check these out:
+If you're interested in this sort of 'value-driven marketing', here are a few examples to get you started:
 
 - [Unbouce Landing Page Conversion Course](http://do.thelandingpagecourse.com/)
 - [Patio11 Training Course](https://training.kalzumeus.com/)
-
-Quick disclaimer: I have nothing against Bounce Exchange. Their business idea is brilliant... it's just that I would approach the banner's messaging very differently.
 
 ## Implementation
 [Live example](http://colors.carlsednaoui.com/)
