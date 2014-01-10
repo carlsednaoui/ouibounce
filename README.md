@@ -1,4 +1,4 @@
-# OuiBounce
+# Bounce Exchange Alternative
 OuiBounce is ~~an open sourced library~~ a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
 
 This project was inspired by [BounceExchange](http://bounceexchange.com/). With OuiBounce you can display a modal with a marketing message and an email capture form before a user leaves your website.
