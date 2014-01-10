@@ -1,7 +1,7 @@
 # Bounce Exchange Alternative
-OuiBounce is ~~an open sourced library~~ a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
+This is ~~an open sourced library~~ a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
 
-This project was inspired by [BounceExchange](http://bounceexchange.com/). With OuiBounce you can display a modal with a marketing message and an email capture form before a user leaves your website.
+This project was inspired by [BounceExchange](http://bounceexchange.com/) and enables you to display a modal before a user leaves your website.
 
 ## The philosophy behind this project
 I ask you to **please** use this project to provide value to your visitors. With tools like these it's very easy to create something spammy-looking that provides little value to prospective customers.
@@ -18,7 +18,9 @@ If you're interested in this sort of 'value-driven marketing', check these out:
 - [Unbouce Landing Page Conversion Course](http://do.thelandingpagecourse.com/)
 - [Patio11 Training Course](https://training.kalzumeus.com/)
 
-## Using OuiBounce
+Quick disclaimer: I have nothing against Bounce Exchange. Their business idea is brilliant... it's just that I would approach the banner's messaging very differently.
+
+## Implementation
 [Live example](http://colors.carlsednaoui.com/)
 
 - Include ouibounce.js
