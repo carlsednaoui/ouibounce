@@ -1,10 +1,10 @@
 body {
   background-color: lavender;
   color: salmon;
-  min-height: 4000px;
+  min-height: 500px;
   padding: 0;
 }
 
-p {
-  height: 10vh;
+#ouibounce-modal {
+    display: none;
 }
