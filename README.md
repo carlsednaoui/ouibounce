@@ -12,6 +12,7 @@ Download the minified script and include it in your HTML head.
 ### Usage
 - Create a hidden modal
 - Select the modal with jQuery and call ouibounce as such 
+
 ```js
 $('#ouibounce-modal').ouibounce();
 ```
