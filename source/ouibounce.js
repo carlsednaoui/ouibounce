@@ -1,5 +1,6 @@
 $.fn.ouibounce = function(config) {
-  var sensitivity = config.sensitivity || 20,
+  var config      = config || {},
+      sensitivity = config.sensitivity || 20,
       _this       = this;
   
   $('html').on('mouseout.ouibounce', function(e) {
