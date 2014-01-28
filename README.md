@@ -1,4 +1,4 @@
-# Bounce Exchange Alternative [![alt text][1]][1.1]
+# Bounce Exchange Alternative (aka OuiBounce) [![alt text][1]][1.1]
 
 A small library that enables you to display a modal before a user leaves your website. This was inspired by [BounceExchange](http://bounceexchange.com/).
 
@@ -23,6 +23,11 @@ Configuring sensitivity. Use it to define how far your mouse has to be from the 
 Example    
 ```js
 $('#ouibounce-modal').ouibounce({sensitivity: 40});
+```
+
+To remove ouibounce you can call    
+```js
+$('html').off('mouseout.ouibounce');
 ```
 
 
