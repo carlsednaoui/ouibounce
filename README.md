@@ -17,6 +17,14 @@ Download the minified script and include it in your HTML head.
 $('#ouibounce-modal').ouibounce();
 ```
 
+##### Options
+Configuring sensitivity. Use it to define how far your mouse has to be from the window breakpoint. The higher value the more sensitive. _Defaults to 20._
+
+Example    
+```js
+$('#ouibounce-modal').ouibounce({sensitivity: 40});
+```
+
 
 ### Example
 [Live example](http://colors.carlsednaoui.com/)
