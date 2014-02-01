@@ -21,6 +21,9 @@ Not sure what I mean by "provide value"? Here are a few ideas to get your creati
 Download the minified script located in the "source" folder and include it in your HTML head.
 
 ### Usage
+OuiBounce is a jQuery plugin, make sure you load it _after_ jQuery.
+
+To use it simply:
 - Create a hidden modal
 - Select the modal with jQuery and call ouibounce. Here's an example:
 
@@ -29,7 +32,7 @@ $('#ouibounce-modal').ouibounce();
 ```
 
 ##### Options
-OuiBounce offers a few options. These are:
+OuiBounce offers a few options, such as:
 
 - Sensitivity
 - Aggressive mode
@@ -41,16 +44,16 @@ Example
 $('#ouibounce-modal').ouibounce({sensitivity: 40});
 ```
 
-To remove ouibounce you can call    
-```js
-$('html').off('mouseout.ouibounce');
-```
-
 __Enabling aggressive mode:__ By default, OuiBounce will only fire once. When OuiBounce fires a cookie is created to ensure an _non obtrusive_ experience. There are cases, however, when you may want to be more aggressive (as in, you want the modal to be elegible to fire anytime the page is loaded). A perfect example is Paid landing pages.
 
 Here's how to enable aggressive mode:    
 ```js
 $('#ouibounce-modal').ouibounce({aggressive: true});
+```
+
+__To remove ouibounce:__ Call    
+```js
+$('html').off('mouseout.ouibounce');
 ```
 
 
