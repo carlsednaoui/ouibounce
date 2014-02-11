@@ -1,0 +1,29 @@
+{
+  "name": "bounce-exchange-alternative",
+  "version": "0.0.1",
+  "description": "Show some HTML before visitors leave your site.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/carlsednaoui/bounce-exchange-alternative.git"
+  },
+  "author": "Carl Sednaoui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlsednaoui/bounce-exchange-alternative/issues"
+  },
+  "homepage": "https://github.com/carlsednaoui/bounce-exchange-alternative",
+  "devDependencies": {
+    "gulp": "~3.4.0",
+    "gulp-uglify": "~0.1.0",
+    "gulp-rename": "~0.2.2",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-minify-css": "~0.3.0"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OuiBounce Testing Page</title>
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Add the OuiBounce CSS -->
+    <link rel="stylesheet" href="ouibounce.min.css">
+
+    <!-- Load jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <!-- Add OuiBounce JS -->
+    <script src="../source/ouibounce.js"></script>
+  </head>
+
+  <body>
+    <!-- Example page instructions -->
+    <h1>Try leaving this page to fire OuiBounce</h1>
+
+    <!-- OuiBounce Modal -->
+    <div id="ouibounce-modal">
+      <div class="underlay"></div>
+      <div class="modal">
+        <h3>This is the tile of your modal</h3>
+        <p>Place your marketing message here!</p>
+      </div>
+    </div>
+    
+    <!-- Example page JS        -->
+    <!-- Used to fire the modal -->
+    <script>
+      $('#ouibounce-modal').ouibounce({aggressive: true, timer: 0});
+      $('body').on('click', function() {
+        $('#ouibounce-modal').hide();
+      });
+
+      $('#ouibounce-modal .modal').on('click', function(e) {
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

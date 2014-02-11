@@ -1,83 +1,79 @@
-<!-- Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
-Follow me on [![alt text][1]][1.1]
+# Bounce Exchange Alternative [![alt text][1]][1.1]
+### (aka OuiBounce)
 
+A small library enabling you to display a modal before a user leaves your website. This was inspired by [BounceExchange](http://bounceexchange.com/).
+
+
+### The philosophy behind this project
+This library helps you increase your landing page conversion rates. From my experience, you can expect a lift of 7% to 15% depending on your audience, traffic type (paid or unpaid) and offer.
+
+Talking about offers... __please__ use OuiBounde to __provide value__ to your visitors. With tools like these __it's very easy to create something spammy-looking__ that provides little value to prospective customers yet ensures a terrible experience.
+
+Not sure what I mean by "provide value"? Here are a few ideas to get your creative juices flowing:
+
+- Free ebook
+- Upcoming webinar invite
+- Exclusive access to XYZ
+- [A full educational course](http://do.thelandingpagecourse.com/)
+- [Valuable content](https://training.kalzumeus.com/)
+
+### Installation
+Download the minified script located in the "source" folder and include it in your HTML head.
+
+### Usage
+OuiBounce is a jQuery plugin, make sure you load it _after_ jQuery.
+
+To use it simply:
+- Create a hidden modal
+- Select the modal with jQuery and call ouibounce. Here's an example:
+
+```js
+$('#ouibounce-modal').ouibounce();
+```
+
+##### Options
+OuiBounce offers a few options, such as:
+
+- Sensitivity
+- Aggressive mode
+- Timer
+
+__Configuring sensitivity:__ Use it to define how far your mouse has to be from the window breakpoint. The higher value the more sensitive. _Defaults to 20._
+
+Example    
+```js
+$('#ouibounce-modal').ouibounce({sensitivity: 40});
+```
+
+__Enabling aggressive mode:__ By default, OuiBounce will only fire once. When OuiBounce fires a cookie is created to ensure an _non obtrusive_ experience. There are cases, however, when you may want to be more aggressive (as in, you want the modal to be elegible to fire anytime the page is loaded). A perfect example is Paid landing pages.
+
+Here's how to enable aggressive mode:    
+```js
+$('#ouibounce-modal').ouibounce({aggressive: true});
+```
+
+__Set a min time before OuiBounce fires:__ By default, OuiBounce won't fire in the first second. You can pass a timer option like so:
+```js
+$('#ouibounce-modal').ouibounce({timer: 0});
+```
+
+__To remove ouibounce:__ Call    
+```js
+$('html').off('mouseout.ouibounce');
+```
+
+
+### Example
+[Live example](http://colors.carlsednaoui.com/)
+
+### Miscellaneous
+- This library provides no guarantees.
+- To contribute, check out [contributing.md](contributing.md).
+- Licensed under [MIT](license.md).
+- Special thanks to [Zertosh](https://github.com/zertosh), [Jenius](https://github.com/jenius) and [BounceExchange](http://bounceexchange.com/).
+
+
+<!-- Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 [1]: http://i.imgur.com/tXSoThF.png (twitter)
 [1.1]: http://www.twitter.com/carlsednaoui
 <!-- Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
-
-# Bounce Exchange Alternative
-This is ~~an open sourced library~~ a small project that turned up easier than expected thanks to [Zertosh](https://github.com/zertosh).
-
-This project was inspired by [BounceExchange](http://bounceexchange.com/) and enables you to display a modal before a user leaves your website.
-
-## The philosophy behind this project
-**Please** use this project to provide value to your visitors. With tools like these it's very easy to create something spammy-looking that provides little value to prospective customers.
-
-Quick disclaimer: I have nothing against Bounce Exchange. On the contrary, their business idea is brilliant... it's just that I would approach the banner's messaging very differently. Example:
-
-![](http://i.imgur.com/ot2xNi4.png)
-![](http://i.imgur.com/tpQNyOr.png)
-
-This doesn't provide much value to the user. It would be **much** more valuable to offer a webinar teaching online marketing best practices to prospective customers. Towards the end of the webinar they could mention how other companies are benefiting by using their services.
-
-If you're interested in this sort of 'value-driven marketing', here are a few examples to get you started:
-
-- [Unbouce Landing Page Conversion Course](http://do.thelandingpagecourse.com/)
-- [Patio11 Training Course](https://training.kalzumeus.com/)
-
-## Implementation
-[Live example](http://colors.carlsednaoui.com/)
-
-- Include ouibounce.js
-- Include bootstrap_modal.css
-- Create your modal
-
-        <!-- OuiBounce Modal -->
-        <div class="modal fade" id="ouibounce-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
-                Place your marketing message here!
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">No thanks</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-- Et voila! :)
-
-## Notes
-This was quickly hacked together and may not behave as expected.
-
-
-## Dependencies and credit
-OuiBounce depends on jQuery and uses [Bootstrap's](http://getbootstrap.com/javascript/#modals) modal JS & CSS.
-
-Thanks to [Zertosh](https://github.com/zertosh) for the help.
-
-## License
-MIT
-
-    The MIT License (MIT)
-
-    Copyright (c) <year> <copyright holders>
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
