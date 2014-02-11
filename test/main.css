@@ -3,6 +3,8 @@ body {
   color: #F0F1F2;
   min-height: 500px;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
 }
 
 #ouibounce-modal {
