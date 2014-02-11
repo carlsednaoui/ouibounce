@@ -6,7 +6,3 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: sans-serif;
 }
-
-#ouibounce-modal {
-    display: none;
-}
