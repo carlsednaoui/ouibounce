@@ -36,6 +36,7 @@ OuiBounce offers a few options, such as:
 
 - Sensitivity
 - Aggressive mode
+- Timer
 
 __Configuring sensitivity:__ Use it to define how far your mouse has to be from the window breakpoint. The higher value the more sensitive. _Defaults to 20._
 
@@ -49,6 +50,11 @@ __Enabling aggressive mode:__ By default, OuiBounce will only fire once. When Ou
 Here's how to enable aggressive mode:    
 ```js
 $('#ouibounce-modal').ouibounce({aggressive: true});
+```
+
+__Set a min time before OuiBounce fires:__ By default, OuiBounce won't fire in the first second. You can pass a timer option like so:
+```js
+$('#ouibounce-modal').ouibounce({timer: 0});
 ```
 
 __To remove ouibounce:__ Call    
