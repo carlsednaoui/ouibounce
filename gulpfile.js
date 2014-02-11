@@ -15,4 +15,9 @@ gulp.task('build', function() {
         .pipe(minifyCSS())
         .pipe(rename('ouibounce.min.css'))
         .pipe(gulp.dest('test'));
+
+    gulp.src('test/ouibounce.css')
+        .pipe(prefix())
+        .pipe(rename('ouibounce-prefix.css'))
+        .pipe(gulp.dest('test'));
 });
