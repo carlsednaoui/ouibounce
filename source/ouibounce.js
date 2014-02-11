@@ -1,11 +1,28 @@
 $.fn.ouibounce = function(config) {
   var config      = config || {},
-      sensitivity = config.sensitivity || 20,
-      aggressive = config.aggressive || false,
-      _this       = this;
-  
+      aggressive  = config.aggressive || false,
+      sensitivity = setDefault(config.sensitivity, 20),
+      timer       = setDefault(config.timer, 1000);
 
-  function getCookieValue() {
+  setTimeout(attachOuiBounce.bind(this), timer);
+
+  function setDefault(_property, _default) {
+    return typeof _property === 'undefined' ? _default : _property;
+  }
+
+  function attachOuiBounce() {
+    var _this = this;
+    $('html').on('mouseout.ouibounce', function(e) {
+      if (e.clientY > sensitivity || (getCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
+      _this.show();
+
+      // set cookie and disable mouseout event
+      document.cookie = 'viewedOuibounceModal=true';
+      $('html').off('mouseout.ouibounce');
+    });
+  }
+
+  function getCookieValue(k, v) {
     // return cookies in an object
     var cookies = document.cookie.split(';').reduce(function(prev, curr) {
       var el = curr.split('=');
@@ -14,16 +31,6 @@ $.fn.ouibounce = function(config) {
       return prev;
     }, {});
 
-    return cookies.viewedOuibounceModal === 'true' ? true : false;
+    return cookies[k] === v;
   }
-
-
-  $('html').on('mouseout.ouibounce', function(e) {
-    if (e.clientY > sensitivity || (getCookieValue() && !aggressive)) return;
-    _this.show();
-
-    // set cookie and disable mouseout event
-    document.cookie = 'viewedOuibounceModal=true';
-    $('html').off('mouseout.ouibounce');
-  });
 };
