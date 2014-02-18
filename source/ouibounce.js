@@ -16,7 +16,6 @@ $.fn.ouibounce = function(config) {
     $('html').on('mouseout.ouibounce', function(e) {
       if (e.clientY > sensitivity || (getCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
       _this.show();
-      
       callback();
 
       // set cookie and disable mouseout event
