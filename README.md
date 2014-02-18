@@ -57,6 +57,11 @@ __Set a min time before OuiBounce fires:__ By default, OuiBounce won't fire in t
 $('#ouibounce-modal').ouibounce({timer: 0});
 ```
 
+__Set callback:__ You can also add a callback which will fire once OuiBounce has been triggered:
+```js
+$('#ouibounce-modal').ouibounce({ callback: function() { console.log('fired !'); } });
+```
+
 __To remove ouibounce:__ Call    
 ```js
 $('html').off('mouseout.ouibounce');
