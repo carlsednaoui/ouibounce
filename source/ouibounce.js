@@ -2,7 +2,8 @@ $.fn.ouibounce = function(config) {
   var config      = config || {},
       aggressive  = config.aggressive || false,
       sensitivity = setDefault(config.sensitivity, 20),
-      timer       = setDefault(config.timer, 1000);
+      timer       = setDefault(config.timer, 1000),
+      callback    = config.callback || function() {};
 
   setTimeout(attachOuiBounce.bind(this), timer);
 
@@ -15,6 +16,8 @@ $.fn.ouibounce = function(config) {
     $('html').on('mouseout.ouibounce', function(e) {
       if (e.clientY > sensitivity || (getCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
       _this.show();
+      
+      callback();
 
       // set cookie and disable mouseout event
       document.cookie = 'viewedOuibounceModal=true';
