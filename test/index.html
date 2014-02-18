@@ -30,7 +30,7 @@
     <!-- Example page JS        -->
     <!-- Used to fire the modal -->
     <script>
-      $('#ouibounce-modal').ouibounce({aggressive: true, timer: 0});
+      $('#ouibounce-modal').ouibounce({ aggressive: true, timer: 0, callback: function() { console.log('fired !'); } });
       $('body').on('click', function() {
         $('#ouibounce-modal').hide();
       });
