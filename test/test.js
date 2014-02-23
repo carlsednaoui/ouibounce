@@ -3,7 +3,7 @@ var should = require('should'),
     path   = require('path');
 
 var browser        = new Zombie(),
-    test_page_path = 'file://' + path.join(__dirname, 'index.html');
+    test_page_path = 'file://' + path.join(__dirname, 'fixtures/basic.html');
 
 describe('Performs basic OuiBounce functionality', function() {
   before(function(done) {
@@ -37,4 +37,7 @@ describe('Performs basic OuiBounce functionality', function() {
       })
       .then(done);
   });
+
+  it('should only fire once');
+  it('should fire multiple times if aggressive mode is on');
 });
