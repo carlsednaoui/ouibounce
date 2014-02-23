@@ -18,7 +18,7 @@ Not sure what I mean by "provide value"? Here are a few ideas to get your creati
 - [Valuable content](https://training.kalzumeus.com/)
 
 ### Installation
-Download the minified script located in the "source" folder and include it in your HTML head.
+Download the [minified](build/ouibounce.min.js) or [unminified](build/ouibounce.js) script and include it on your page. OuiBounce is wrapped by a [umd wrapper](https://github.com/ForbesLindesay/umd), so if you are using _requirejs/amd_ or _commonjs/browserify_, it will still work fine.
 
 ### Usage
 To use it simply:
@@ -77,7 +77,6 @@ ouiBounce(document.getElementById('ouibounce-modal'), {
 });
 ```
 
-
 ### Example
 [Live example](http://colors.carlsednaoui.com/)
 
@@ -87,8 +86,6 @@ ouiBounce(document.getElementById('ouibounce-modal'), {
 - Licensed under [MIT](license.md).
 - Special thanks to [Zertosh](https://github.com/zertosh), [Jenius](https://github.com/jenius) and [BounceExchange](http://bounceexchange.com/).
 
-
 <!-- Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 [1]: http://i.imgur.com/tXSoThF.png (twitter)
 [1.1]: http://www.twitter.com/carlsednaoui
-<!-- Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
