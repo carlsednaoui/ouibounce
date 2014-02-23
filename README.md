@@ -21,14 +21,19 @@ Not sure what I mean by "provide value"? Here are a few ideas to get your creati
 Download the minified script located in the "source" folder and include it in your HTML head.
 
 ### Usage
-OuiBounce is a jQuery plugin, make sure you load it _after_ jQuery.
-
 To use it simply:
-- Create a hidden modal
-- Select the modal with jQuery and call ouibounce. Here's an example:
 
+- Create a hidden modal
+- Select the modal with vanilla JavaScript (or jQuery) and call ouibounce. Here's an example:
+
+Without jQuery    
 ```js
-$('#ouibounce-modal').ouibounce();
+ouiBounce(document.getElementById('ouibounce-modal'));
+```
+
+Using jQuery    
+```js 
+ouiBounce($('#ouibounce-modal')[0]);
 ```
 
 ##### Options
@@ -37,34 +42,39 @@ OuiBounce offers a few options, such as:
 - Sensitivity
 - Aggressive mode
 - Timer
+- Callback
 
 __Configuring sensitivity:__ Use it to define how far your mouse has to be from the window breakpoint. The higher value the more sensitive. _Defaults to 20._
 
 Example    
 ```js
-$('#ouibounce-modal').ouibounce({sensitivity: 40});
+ouiBounce(document.getElementById('ouibounce-modal'), { sensitivity: 40 });
 ```
 
 __Enabling aggressive mode:__ By default, OuiBounce will only fire once. When OuiBounce fires a cookie is created to ensure an _non obtrusive_ experience. There are cases, however, when you may want to be more aggressive (as in, you want the modal to be elegible to fire anytime the page is loaded). A perfect example is Paid landing pages.
 
 Here's how to enable aggressive mode:    
 ```js
-$('#ouibounce-modal').ouibounce({aggressive: true});
+ouiBounce(document.getElementById('ouibounce-modal'), { aggressive: true }});
 ```
 
 __Set a min time before OuiBounce fires:__ By default, OuiBounce won't fire in the first second. You can pass a timer option like so:
 ```js
-$('#ouibounce-modal').ouibounce({timer: 0});
+ouiBounce(document.getElementById('ouibounce-modal'), { timer: 0 }});
 ```
 
 __Set callback:__ You can also add a callback which will fire once OuiBounce has been triggered:
 ```js
-$('#ouibounce-modal').ouibounce({ callback: function() { console.log('fired !'); } });
+ouiBounce(document.getElementById('ouibounce-modal'), { callback: function() { console.log('fired !'); } });
 ```
 
-__To remove ouibounce:__ Call    
+__Multiple options:__ You can also combine multiple options. Here's an example
 ```js
-$('html').off('mouseout.ouibounce');
+ouiBounce(document.getElementById('ouibounce-modal'), {
+  aggressive: true,
+  timer: 0,
+  callback: function() { console.log('ouiBounce fired!'); }
+});
 ```
 
 
