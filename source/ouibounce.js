@@ -27,6 +27,7 @@ $.fn.ouibounce = function(config) {
   function getCookieValue(k, v) {
     // return cookies in an object
     var cookies = document.cookie.split(';').reduce(function(prev, curr) {
+    var cookies = document.cookie.split('; ').reduce(function(prev, curr) {
       var el = curr.split('=');
       prev[el[0]] = el[1];
 
