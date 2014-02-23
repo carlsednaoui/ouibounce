@@ -10,6 +10,7 @@
     left: 0;
     background-color: rgba(0,0,0, 0.5);
     cursor: pointer;
+    -webkit-animation: fadein .5s;
     animation: fadein .5s;
 }
 
@@ -26,6 +27,7 @@
     left: 0;
 
     border-radius: 4px;
+    -webkit-animation: popin .3s;
     animation: popin .3s;
 }
 
@@ -44,13 +46,24 @@
     color: #344A5F;
 }
 
+@-webkit-keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @keyframes fadein {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
+@-webkit-keyframes popin {
+    0% { -webkit-transform: scale(0); transform: scale(0); opacity: 0; }
+    85% { -webkit-transform: scale(1.05); transform: scale(1.05); opacity: 1; }
+    100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
+}
+
 @keyframes popin {
-    0% { transform: scale(0); opacity: 0; }
-    85% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
+    0% { -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); opacity: 0; }
+    85% { -webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05); opacity: 1; }
+    100% { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }
 }
