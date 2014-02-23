@@ -1,6 +1,8 @@
 # Bounce Exchange Alternative [![alt text][1]][1.1]
 ### (aka OuiBounce)
 
+[![tests](https://travis-ci.org/carlsednaoui/bounce-exchange-alternative.png?branch=master)](https://travis-ci.org/carlsednaoui/bounce-exchange-alternative)
+
 A small library enabling you to display a modal before a user leaves your website. This was inspired by [BounceExchange](http://bounceexchange.com/).
 
 
