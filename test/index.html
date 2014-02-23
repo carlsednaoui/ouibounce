@@ -2,7 +2,18 @@
 <html>
   <head>
     <title>OuiBounce Testing Page</title>
-    <link rel="stylesheet" href="main.css">
+
+    <!-- Example page base styling -->
+    <style>
+      body {
+        background-color: #2E4052;
+        color: #F0F1F2;
+        min-height: 500px;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        font-family: sans-serif;
+      }
+    </style>
 
     <!-- Add the OuiBounce CSS -->
     <link rel="stylesheet" href="ouibounce.min.css">
@@ -11,7 +22,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
     <!-- Add OuiBounce JS -->
-    <script src="../source/ouibounce.js"></script>
+    <script src="../build/ouibounce.js"></script>
   </head>
 
   <body>
@@ -26,7 +37,7 @@
         <p>Place your marketing message here!</p>
       </div>
     </div>
-    
+
     <!-- Example page JS        -->
     <!-- Used to fire the modal -->
     <script>
