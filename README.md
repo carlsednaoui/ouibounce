@@ -9,7 +9,7 @@ A small library enabling you to display a modal before a user leaves your websit
 ### The philosophy behind this project
 This library helps you increase your landing page conversion rates. From my experience, you can expect a lift of 7% to 15% depending on your audience, traffic type (paid or unpaid) and offer.
 
-Talking about offers... __please__ use OuiBounde to __provide value__ to your visitors. With tools like these __it's very easy to create something spammy-looking__ that provides little value to prospective customers yet ensures a terrible experience.
+Talking about offers... __please__ use OuiBounce to __provide value__ to your visitors. With tools like these __it's very easy to create something spammy-looking__ that provides little value to prospective customers yet ensures a terrible experience.
 
 Not sure what I mean by "provide value"? Here are a few ideas to get your creative juices flowing:
 
