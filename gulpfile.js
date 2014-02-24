@@ -31,3 +31,8 @@ gulp.task('build', function() {
         .pipe(rename('ouibounce.min.css'))
         .pipe(gulp.dest('test'));
 });
+
+// Rerun the task when a file changes
+gulp.task('watch', function () {
+  gulp.watch('test/ouibounce.styl', ['build']);
+});
