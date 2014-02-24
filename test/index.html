@@ -4,10 +4,11 @@
     <title>OuiBounce Testing Page</title>
 
     <!-- Example page base styling -->
+    <!-- Don't worry abou this     -->
     <style>
       body {
-        background-color: #2E4052;
-        color: #F0F1F2;
+        background-color: #F0F1F2;
+        color: #2E4052;
         min-height: 500px;
         padding: 0;
         -webkit-font-smoothing: antialiased;
@@ -15,8 +16,9 @@
       }
     </style>
 
-    <!-- Add the OuiBounce CSS -->
+    <!-- Add the OuiBounce CSS & Font -->
     <link rel="stylesheet" href="ouibounce.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Load jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -33,8 +35,24 @@
     <div id="ouibounce-modal">
       <div class="underlay"></div>
       <div class="modal">
-        <h3>This is a OuiBounce modal title</h3>
-        <p>Place your marketing message here!</p>
+        <div class="modal-title">
+          <h3>This is a OuiBounce modal title!</h3>
+        </div>
+
+        <div class="modal-body">
+          <p>A doge is an elected chief of state lordship, the ruler of the Republic in many of the Italian city states during the medieval and renaissance periods, in the Italian "crowned republics".<a href="https://en.wikipedia.org/wiki/Doge" target="blank">[1]</a></p>
+          <p>The word is from a Venetian word that descends from the Latin dux (as do the English duke and the standard Italian duce and duca), meaning "leader", especially in a military context. The wife of a doge is styled a dogaressa.</p>
+
+          <form>
+            <input type="text" placeholder="you@email.com">
+            <input type="submit" value="learn more &raquo;">
+            <p class="form-notice">*this is a fake form</p>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <p>no thanks</p>
+        </div>
       </div>
     </div>
 
@@ -48,6 +66,10 @@
       });
 
       $('body').on('click', function() {
+        $('#ouibounce-modal').hide();
+      });
+
+      $('.no-thanks').on('click', function() {
         $('#ouibounce-modal').hide();
       });
 

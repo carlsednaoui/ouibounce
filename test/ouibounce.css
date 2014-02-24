@@ -1,4 +1,5 @@
 #ouibounce-modal {
+  font-family: 'Open Sans', sans-serif;
   display: none;
 }
 #ouibounce-modal .underlay {
@@ -15,7 +16,7 @@
 #ouibounce-modal .modal {
   width: 600px;
   height: 400px;
-  background-color: #252525;
+  background-color: #f0f1f2;
   z-index: 1;
   position: absolute;
   margin: auto;
@@ -27,18 +28,70 @@
   -webkit-animation: popin 0.3s;
   animation: popin 0.3s;
 }
-#ouibounce-modal h3 {
+#ouibounce-modal .modal-title {
   font-size: 18px;
-  background-color: #444;
+  background-color: #252525;
   color: #fff;
   padding: 10px;
   margin: 0;
   border-radius: 4px 4px 0 0;
   text-align: center;
 }
+#ouibounce-modal h3 {
+  font-size: 1em;
+  margin: 0.2em;
+  text-transform: uppercase;
+}
+#ouibounce-modal .modal-body {
+  padding: 20px 35px;
+  font-size: 0.9em;
+}
 #ouibounce-modal p {
-  padding: 10px;
   color: #344a5f;
+}
+#ouibounce-modal form {
+  text-align: center;
+  margin-top: 35px;
+}
+#ouibounce-modal form input[type=text] {
+  padding: 12px;
+  font-size: 1.2em;
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  -webkit-font-smoothing: antialiased;
+}
+#ouibounce-modal form input[type=submit] {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px;
+  font-size: 1.1em;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #4ab471;
+  border: none;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+#ouibounce-modal form p {
+  text-align: left;
+  margin-left: 30px;
+  opacity: 0.6;
+  margin-top: 1px;
+  padding-top: 1px;
+  font-size: 0.8em;
+}
+#ouibounce-modal .modal-footer {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+#ouibounce-modal .modal-footer p {
+  text-transform: capitalize;
+  cursor: pointer;
+  display: inline;
+  border-bottom: 1px solid #344a5f;
 }
 @-webkit-keyframes fadein {
   0% {
