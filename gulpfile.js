@@ -3,13 +3,14 @@ var gulp      = require('gulp'),
     prefix    = require('gulp-autoprefixer'),
     minifyCSS = require('gulp-minify-css'),
     umd_wrap  = require('gulp-wrap-umd'),
+    stylus    = require('gulp-stylus'),
     rename    = require('gulp-rename');
 
 gulp.task('build', function() {
 
     gulp.src('source/ouibounce.js')
         .pipe(umd_wrap({ namespace: 'ouiBounce' }))
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('build'));
 
     gulp.src('source/ouibounce.js')
         .pipe(umd_wrap({ namespace: 'ouiBounce' }))
@@ -17,13 +18,16 @@ gulp.task('build', function() {
         .pipe(rename('ouibounce.min.js'))
         .pipe(gulp.dest('build'));
 
-    gulp.src('test/ouibounce.css')
+    gulp.src('test/ouibounce.styl')
+        .pipe(stylus())
+        .pipe(prefix())
+        .pipe(rename('ouibounce.css'))
+        .pipe(gulp.dest('test'));
+
+    gulp.src('test/ouibounce.styl')
+        .pipe(stylus())
         .pipe(prefix())
         .pipe(minifyCSS())
         .pipe(rename('ouibounce.min.css'))
-        .pipe(gulp.dest('test'));
-
-    gulp.src('test/ouibounce.css')
-        .pipe(prefix())
         .pipe(gulp.dest('test'));
 });

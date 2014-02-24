@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/carlsednaoui/bounce-exchange-alternative",
   "devDependencies": {
-    "gulp": "~3.4.0",
+    "gulp": "~3.5.0",
     "gulp-uglify": "~0.1.0",
     "gulp-rename": "~0.2.2",
     "gulp-autoprefixer": "0.0.6",
@@ -28,6 +28,7 @@
     "gulp-wrap-umd": "~0.1.1",
     "mocha": "~1.17.1",
     "should": "~3.1.2",
-    "zombie": "~2.0.0-alpha29"
+    "zombie": "~2.0.0-alpha29",
+    "gulp-stylus": "0.0.13"
   }
 }
