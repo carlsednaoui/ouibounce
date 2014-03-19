@@ -35,4 +35,5 @@ gulp.task('build', function() {
 // Rerun the task when a file changes
 gulp.task('watch', function () {
   gulp.watch('test/ouibounce.styl', ['build']);
+  gulp.watch('source/ouibounce.js', ['build']);
 });
