@@ -44,7 +44,7 @@ Using jQuery
 ouiBounce($('#ouibounce-modal')[0]);
 ```
 
-Without using jQuery, but saving the OuiBounce function    
+Saving the OuiBounce function with vanilla JavaScript    
 ```js
 var _ouiBounce = ouiBounce(document.getElementById('ouibounce-modal'));
 ```
@@ -95,17 +95,14 @@ ouiBounce(document.getElementById('ouibounce-modal'), {
 ##### OuiBounce API
 If you save the OuiBounce function, you can use `fire` to show the modal whenever you want or `disable` to disable it.
 
-Here's how to save the OuiBounce function with vanilla JS    
+Here's how to save the OuiBounce function with vanilla JavaScript    
 ```js
 var _ouiBounce = ouiBounce(document.getElementById('ouibounce-modal'));
 ```
 
-__Fire:__
-To fire OuiBounce on demand use `_ouiBounce.fire()`
+__Fire:__ To fire OuiBounce on demand use `_ouiBounce.fire()`
 
-__Disable:__
-
-To disable OuiBounce on demand use `_ouiBounce.disable()`
+__Disable:__ To disable OuiBounce on demand use `_ouiBounce.disable()`
 
 ### Miscellaneous
 - This library provides no guarantees.
