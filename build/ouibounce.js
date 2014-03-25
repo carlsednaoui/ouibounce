@@ -15,42 +15,53 @@ return function ouiBounce(el, config) {
       aggressive  = config.aggressive || false,
       sensitivity = setDefault(config.sensitivity, 20),
       timer       = setDefault(config.timer, 1000),
-      callback    = config.callback || function() {};
-
-  setTimeout(attachOuiBounce.bind(el), timer);
-
+      callback    = config.callback || function() {},
+      _html       = document.getElementsByTagName('html')[0];
+  
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
   }
 
+  setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
-    var _this = this,
-        _html = document.getElementsByTagName('html')[0];
-
     _html.addEventListener('mouseout', handleMouseout);
-
-    function handleMouseout(e) {
-      if (e.clientY > sensitivity || (getCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
-      _this.style.display = 'block';
-      callback();
-
-      // set cookie and disable mouseout event
-      document.cookie = 'viewedOuibounceModal=true';
-      _html.removeEventListener('mouseout', handleMouseout);
-    }
   }
 
-  function getCookieValue(k, v) {
-    // return cookies in an object
+  function handleMouseout(e) {
+    if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
+    fire();
+    callback();
+  }
+
+  function checkCookieValue(cookieName, value) {
+    // cookies are separated by '; '
     var cookies = document.cookie.split('; ').reduce(function(prev, curr) {
+      // split by '=' to get key, value pairs
       var el = curr.split('=');
+
+      // add the cookie to fn object
       prev[el[0]] = el[1];
 
       return prev;
     }, {});
 
-    return cookies[k] === v;
+    return cookies[cookieName] === value;
   }
+
+  function fire() {
+    el.style.display = 'block';
+    disable();
+  }
+
+  function disable() {
+    document.cookie = 'viewedOuibounceModal=true';
+    _html.removeEventListener('mouseout', handleMouseout);
+  }
+
+  return {
+    fire: fire,
+    disable: disable
+  };
 }
 ;
 
