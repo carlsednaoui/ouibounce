@@ -25,13 +25,12 @@ Not sure what I mean by _provide value_? Here are a few ideas to get your creati
 
 
 ## Installation
-You can also read the docs as a [GitHub Page](http://carlsednaoui.github.io/bounce-exchange-alternative/).
-
 Download the [minified](build/ouibounce.min.js) or [unminified](build/ouibounce.js) script and include it on your page. OuiBounce is wrapped by a [umd wrapper](https://github.com/ForbesLindesay/umd), so if you are using _requirejs/amd_ or _commonjs/browserify_, it will still work fine.
 
 ### Usage
 1. Create a hidden modal
 1. Select the modal with vanilla JavaScript (or jQuery) and call ouibounce
+1. Optional: Save the function to use the public API, allowing you to `fire` or `disable` OuiBounce on demand
 
 Here's an example:
 
@@ -43,6 +42,11 @@ ouiBounce(document.getElementById('ouibounce-modal'));
 Using jQuery    
 ```js 
 ouiBounce($('#ouibounce-modal')[0]);
+```
+
+Without using jQuery, but saving the OuiBounce function    
+```js
+var _ouiBounce = ouiBounce(document.getElementById('ouibounce-modal'));
 ```
 
 ##### Options
@@ -87,6 +91,21 @@ ouiBounce(document.getElementById('ouibounce-modal'), {
   callback: function() { console.log('ouiBounce fired!'); }
 });
 ```
+
+##### OuiBounce API
+If you save the OuiBounce function, you can use `fire` to show the modal whenever you want or `disable` to disable it.
+
+Here's how to save the OuiBounce function with vanilla JS    
+```js
+var _ouiBounce = ouiBounce(document.getElementById('ouibounce-modal'));
+```
+
+__Fire:__
+To fire OuiBounce on demand use `_ouiBounce.fire()`
+
+__Disable:__
+
+To disable OuiBounce on demand use `_ouiBounce.disable()`
 
 ### Miscellaneous
 - This library provides no guarantees.
