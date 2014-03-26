@@ -42,7 +42,12 @@ function ouiBounce(el, config) {
   }
 
   function disable() {
-    document.cookie = 'viewedOuibounceModal=true';
+    //set cookie expiration time
+    var date = new Date(); 
+    var indays = 1; //set days
+		date.setTime(date.getTime()+(indays*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString()+"; path=/";
+    document.cookie = 'viewedOuibounceModal=true'+expires;
     _html.removeEventListener('mouseout', handleMouseout);
   }
 
