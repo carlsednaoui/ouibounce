@@ -1,7 +1,7 @@
-# Bounce Exchange Alternative [![alt text][1]][1.1]
-### (aka OuiBounce) [![tests](https://travis-ci.org/carlsednaoui/bounce-exchange-alternative.png?branch=master)](https://travis-ci.org/carlsednaoui/bounce-exchange-alternative) [![Analytics](https://ga-beacon.appspot.com/UA-49243488-1/ouibounce/readme)](https://github.com/igrigorik/ga-beacon)
+# OuiBounce [![alt text][1]][1.1]
+[![tests](https://travis-ci.org/carlsednaoui/ouibounce.png?branch=master)](https://travis-ci.org/carlsednaoui/ouibounce) [![Analytics](https://ga-beacon.appspot.com/UA-49243488-1/ouibounce/readme)](https://github.com/igrigorik/ga-beacon)
 
-A small library enabling you to display a modal before a user leaves your website. This was inspired by [BounceExchange](http://bounceexchange.com/).
+A small library enabling you to display a modal before a user leaves your website.
 
 [![Support via Gittip](https://rawgithub.com/carlsednaoui/gittip-badge/master/dist/gittip.png)](https://www.gittip.com/carlsednaoui/)
 
@@ -108,7 +108,7 @@ __Disable:__ To disable OuiBounce on demand use `_ouiBounce.disable()`
 - This library provides no guarantees.
 - To contribute, check out [contributing.md](contributing.md).
 - Licensed under [MIT](license.md).
-- Special thanks to [Zertosh](https://github.com/zertosh), [Jenius](https://github.com/jenius) and [BounceExchange](http://bounceexchange.com/).
+- Special thanks to [Zertosh](https://github.com/zertosh) and [Jenius](https://github.com/jenius).
 
 <!-- Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 [1]: http://i.imgur.com/tXSoThF.png (twitter)
