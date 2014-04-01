@@ -1,13 +1,24 @@
 function ouiBounce(el, config) {
-  var config      = config || {},
-      aggressive  = config.aggressive || false,
-      sensitivity = setDefault(config.sensitivity, 20),
-      timer       = setDefault(config.timer, 1000),
-      callback    = config.callback || function() {},
-      _html       = document.getElementsByTagName('html')[0];
+  var config     = config || {},
+    aggressive   = config.aggressive || false,
+    sensitivity  = setDefault(config.sensitivity, 20),
+    timer        = setDefault(config.timer, 1000),
+    callback     = config.callback || function() {},
+    cookieExpire = setDefaultCookieExpire(config.cookieExpire || 30),
+    _html        = document.getElementsByTagName('html')[0];
   
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
+  }
+
+  function setDefaultCookieExpire(days) {
+    // transform days to milliseconds
+    var ms = days*24*60*60*1000;
+
+    var date = new Date();
+    date.setTime(date.getTime() + ms);
+
+    return "; expires=" + date.toGMTString();
   }
 
   setTimeout(attachOuiBounce, timer);
@@ -42,7 +53,7 @@ function ouiBounce(el, config) {
   }
 
   function disable() {
-    document.cookie = 'viewedOuibounceModal=true';
+    document.cookie = 'viewedOuibounceModal=true' + cookieExpire;
     _html.removeEventListener('mouseout', handleMouseout);
   }
 

@@ -83,6 +83,11 @@ __Callback:__ You can add a callback, which will run once OuiBounce has been tri
 ouiBounce(document.getElementById('ouibounce-modal'), { callback: function() { console.log('OuiBounce fired!'); } });
 ```
 
+__Cookie expiration:__ You can add a cookie expiration (in days). The default cookie expiration is 30 days.
+```js
+ouiBounce(document.getElementById('ouibounce-modal'), { cookieExpire: 10 });
+```
+
 __Multiple options:__ You can also combine multiple options:
 ```js
 ouiBounce(document.getElementById('ouibounce-modal'), {
