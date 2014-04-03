@@ -32,6 +32,8 @@ You can also get OuiBounce from [cdnjs.com](http://cdnjs.com/).
 - Regular version: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.js`
 - Minified version: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.min.js`
 
+_* You might need to add `http:` at the beginning of the url for local development_
+
 ### Usage
 1. Create a hidden modal
 1. Select the modal with vanilla JavaScript (or jQuery) and call ouibounce
