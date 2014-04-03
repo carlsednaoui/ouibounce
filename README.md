@@ -63,6 +63,7 @@ OuiBounce offers a few options, such as:
 - Aggressive mode
 - Timer
 - Callback
+- Cookie expiration
 
 __Sensitivity:__ Define how far the mouse has to be from the window breakpoint. The higher value, the more sensitive. _Defaults to 20._
 
