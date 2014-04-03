@@ -29,8 +29,8 @@ Download the [minified](build/ouibounce.min.js) or [unminified](build/ouibounce.
 
 You can also get OuiBounce from [cdnjs.com](http://cdnjs.com/).
 
-- The regular version is available at: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.js`
-- The minified version is available at: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.min.js`
+- Regular version: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.js`
+- Minified version: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.min.js`
 
 ### Usage
 1. Create a hidden modal
