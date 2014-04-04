@@ -30,12 +30,7 @@ Not sure what I mean by _provide value_? Here are a few ideas to get your creati
 ## Installation
 Download the [minified](build/ouibounce.min.js) or [unminified](build/ouibounce.js) script and include it on your page. OuiBounce is wrapped by a [umd wrapper](https://github.com/ForbesLindesay/umd), so if you are using _requirejs/amd_ or _commonjs/browserify_, it will still work fine.
 
-You can also get OuiBounce from [cdnjs.com](http://cdnjs.com/).
-
-- Regular version: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.js`
-- Minified version: `//cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.4/ouibounce.min.js`
-
-_* You might need to add `http:` at the beginning of the url for local development_
+You can also get OuiBounce from [cdnjs.com](http://cdnjs.com/libraries/ouibounce/).
 
 ### Usage
 1. Create a hidden modal
