@@ -12,6 +12,10 @@ function ouiBounce(el, config) {
   }
 
   function setDefaultCookieExpire(days) {
+    //Set cookie to expire in session, if that's the case
+    if (days === "Session") {
+      return;
+    }
     // transform days to milliseconds
     var ms = days*24*60*60*1000;
 
