@@ -16,7 +16,7 @@ return function ouiBounce(el, config) {
     sensitivity  = setDefault(config.sensitivity, 20),
     timer        = setDefault(config.timer, 1000),
     callback     = config.callback || function() {},
-    cookieExpire = setDefaultCookieExpire(config.cookieExpire || false),
+    cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     _html        = document.getElementsByTagName('html')[0];
   
   function setDefault(_property, _default) {
@@ -24,10 +24,6 @@ return function ouiBounce(el, config) {
   }
 
   function setDefaultCookieExpire(days) {
-    //Set cookie to expire in session, if that's the case
-    if (days === false) {
-      return '';
-    }
     // transform days to milliseconds
     var ms = days*24*60*60*1000;
 
