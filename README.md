@@ -23,7 +23,7 @@ Not sure what I mean by _provide value_? Here are a few ideas to get your creati
 - [Valuable content](https://training.kalzumeus.com/)
 
 ## Demo / Example
-- [Example #1](http://carlsednaoui.github.io/bounce-exchange-alternative/)
+- [Example #1](http://carlsednaoui.github.io/ouibounce/)
 - [Example #2](http://colors.carlsednaoui.com/)
 
 
