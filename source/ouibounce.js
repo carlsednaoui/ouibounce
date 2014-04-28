@@ -52,8 +52,9 @@ function ouiBounce(el, config) {
     disable();
   }
 
-  function disable() {
-    document.cookie = 'viewedOuibounceModal=true' + cookieExpire;
+  function disable(cookieExp) {
+    var cookieExpiration= (typeof cookieExp === "undefined") ? setDefaultCookieExpire(cookieExpire) : cookieExp;
+    document.cookie = 'viewedOuibounceModal=true' + cookieExpiration;
     _html.removeEventListener('mouseout', handleMouseout);
   }
 
