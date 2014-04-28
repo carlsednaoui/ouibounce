@@ -68,12 +68,15 @@
         callback: function() { console.log('ouiBounce fired!'); }
       });
 
-      $('body').on('click', function() {
+      $('.underlay').on('click', function() {
         $('#ouibounce-modal').hide();
+        _ouiBounce.disable({ cookieExpire: 5, sitewide: false });
+        
       });
 
       $('#ouibounce-modal .modal-footer').on('click', function() {
         $('#ouibounce-modal').hide();
+        _ouiBounce.disable({ cookieExpire: 5, sitewide: false });
       });
 
       $('#ouibounce-modal .modal').on('click', function(e) {
