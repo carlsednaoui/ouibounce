@@ -52,9 +52,12 @@ function ouiBounce(el, config) {
     disable();
   }
 
-  function disable(cookieExpire) {
-    var cookieExpiration = (typeof cookieExpire === "undefined") ? setDefaultCookieExpire(cookieExpire) : cookieExp;
-    document.cookie = 'viewedOuibounceModal=true' + cookieExpiration;
+  function disable(options) {
+    var options = options || {};
+    
+    var cookieExpiration = (typeof options.cookieExpire === "undefined") ? setDefaultCookieExpire(options.cookieExpire) : cookieExp;
+    var sitewide = (options.sitewide === true) ? ';path=/' : '';
+    document.cookie = 'viewedOuibounceModal=true' + cookieExpiration + sitewide;
     _html.removeEventListener('mouseout', handleMouseout);
   }
 
