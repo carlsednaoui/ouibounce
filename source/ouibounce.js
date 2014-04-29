@@ -47,8 +47,6 @@ function ouiBounce(el, config) {
 
     fire();
     callback();
-    true:76
-    debug.text(e.metaKey + ':' + e.keyCode);
   }
 
   function userFocusedOnURLBar(e) {
