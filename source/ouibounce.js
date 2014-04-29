@@ -7,14 +7,6 @@ function ouiBounce(el, config) {
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     _html        = document.getElementsByTagName('html')[0];
 
-  // @Todo: Add other browsers' hot keys
-  var urlBarHotKeys = {
-    'chrome': {
-      'meta': true,
-      'key': 76 // "L"
-    }
-  }
-
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
   }
@@ -50,13 +42,9 @@ function ouiBounce(el, config) {
   }
 
   function userFocusedOnURLBar(e) {
-    var hotKey = navigator.userAgent.toLowerCase();
+    if(e.metaKey && e.keyCode == 76) return true;
 
-    if(!urlBarHotKeys) return false;
-    else if(hotKey.meta != e.metaKey) return false;
-    else if(hotkey.key != e.keyCode) return false;
-
-    return true;
+    return false;
   }
 
   function checkCookieValue(cookieName, value) {
