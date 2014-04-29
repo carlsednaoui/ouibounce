@@ -35,16 +35,10 @@ function ouiBounce(el, config) {
 
   function handleKeydown(e) {
     if(checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
-    else if(!userFocusedOnURLBar(e)) return;
+    else if(!e.metaKey || e.keyCode != 76) return;
 
     fire();
     callback();
-  }
-
-  function userFocusedOnURLBar(e) {
-    if(e.metaKey && e.keyCode == 76) return true;
-
-    return false;
   }
 
   function checkCookieValue(cookieName, value) {
