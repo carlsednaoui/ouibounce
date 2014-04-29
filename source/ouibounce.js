@@ -54,9 +54,8 @@ function ouiBounce(el, config) {
 
   function disable(options) {
     var options = options || {};
-    var cookieExpiration = (typeof options.cookieExpire === "undefined") ? setDefaultCookieExpire(options.cookieExpire) : cookieExp;
+    var cookieExpiration = (typeof options.cookieExpire === "undefined") ? setDefaultCookieExpire(options.cookieExpire) : cookieExpire;
     var sitewide = (options.sitewide === true) ? ';path=/' : '';
-    
     document.cookie = 'viewedOuibounceModal=true' + cookieExpiration + sitewide;
     _html.removeEventListener('mouseout', handleMouseout);
   }
