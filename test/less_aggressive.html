@@ -63,7 +63,7 @@
       // if you want to use the 'fire' or 'disable' fn,
       // you need to save OuiBounce to an object
       var _ouiBounce = ouiBounce(document.getElementById('ouibounce-modal'), {
-        aggressive: true,
+        cookieExpire: 10,
         timer: 0,
         callback: function() { console.log('ouiBounce fired!'); }
       });
