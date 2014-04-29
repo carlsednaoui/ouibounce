@@ -6,7 +6,7 @@ function ouiBounce(el, config) {
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     _html        = document.getElementsByTagName('html')[0];
-  
+
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
   }
@@ -24,10 +24,19 @@ function ouiBounce(el, config) {
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
     _html.addEventListener('mouseout', handleMouseout);
+    _html.addEventListener('keydown', handleKeydown);
   }
 
   function handleMouseout(e) {
     if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
+    fire();
+    callback();
+  }
+
+  function handleKeydown(e) {
+    if(checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
+    else if(!e.metaKey || e.keyCode != 76) return;
+
     fire();
     callback();
   }
