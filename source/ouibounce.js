@@ -6,7 +6,15 @@ function ouiBounce(el, config) {
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     _html        = document.getElementsByTagName('html')[0];
-  
+
+  // @Todo: Add other browsers' hot keys
+  var urlBarHotKeys = {
+    'chrome': {
+      'meta': true,
+      'key': 76 // "L"
+    }
+  }
+
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
   }
@@ -24,12 +32,33 @@ function ouiBounce(el, config) {
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
     _html.addEventListener('mouseout', handleMouseout);
+    _html.addEventListener('keydown', handleKeydown);
   }
 
   function handleMouseout(e) {
     if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
     fire();
     callback();
+  }
+
+  function handleKeydown(e) {
+    if(checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
+    else if(!userFocusedOnURLBar(e)) return;
+
+    fire();
+    callback();
+    true:76
+    debug.text(e.metaKey + ':' + e.keyCode);
+  }
+
+  function userFocusedOnURLBar(e) {
+    var hotKey = navigator.userAgent.toLowerCase();
+
+    if(!urlBarHotKeys) return false;
+    else if(hotKey.meta != e.metaKey) return false;
+    else if(hotkey.key != e.keyCode) return false;
+
+    return true;
   }
 
   function checkCookieValue(cookieName, value) {
