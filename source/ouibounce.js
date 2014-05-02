@@ -65,9 +65,17 @@ function ouiBounce(el, config) {
 
   function disable(options) {
     var options = options || {};
-    var cookieExpiration = (typeof options.cookieExpire === "undefined") ? cookieExpire : setDefaultCookieExpire(options.cookieExpire);
+
+    // you can pass a specific cookie expiration when using the OuiBounce API
+    // ex: _ouiBounce.disable({ cookieExpire: 5, sitewide: true });
+    if (typeof options.cookieExpire !== 'undefined') {
+      cookieExpire = setDefaultCookieExpire(options.cookieExpire);
+    }
+
     var sitewide = (options.sitewide === true) ? ';path=/' : '';
-    document.cookie = 'viewedOuibounceModal=true' + cookieExpiration + sitewide;
+    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + sitewide;
+    
+    // remove listeners
     _html.removeEventListener('mouseout', handleMouseout);
     _html.removeEventListener('keydown', handleKeydown);
   }
