@@ -1,4 +1,4 @@
-function ouiBounce(el, config) {
+function ouibounce(el, config) {
   var config     = config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),

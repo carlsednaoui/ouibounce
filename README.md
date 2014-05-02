@@ -36,22 +36,22 @@ You can also get OuiBounce from [cdnjs.com](http://cdnjs.com/libraries/ouibounce
 ## Usage
 
 1. Create a hidden modal
-1. Select the modal with vanilla JavaScript (or jQuery) and call `ouiBounce`
+1. Select the modal with vanilla JavaScript (or jQuery) and call `ouibounce`
 1. Optional: Save the function's return value to use the public API, allowing you to `fire` or `disable` OuiBounce on demand
 
 _Example:_    
 ```js
-ouiBounce(document.getElementById('ouibounce-modal'));
+ouibounce(document.getElementById('ouibounce-modal'));
 ```
 
 _Example with jQuery:_    
 ```js 
-ouiBounce($('#ouibounce-modal')[0]);
+ouibounce($('#ouibounce-modal')[0]);
 ```
 
 _Example using the public api:_    
 ```js
-var modal = ouiBounce(document.getElementById('ouibounce-modal'));
+var modal = ouibounce(document.getElementById('ouibounce-modal'));
 modal.fire()
 ```
 
@@ -70,7 +70,7 @@ Define how far the mouse has to be from the window breakpoint. The higher value,
 
 _Example:_    
 ```js
-ouiBounce(document.getElementById('ouibounce-modal'), { sensitivity: 40 });
+ouibounce(document.getElementById('ouibounce-modal'), { sensitivity: 40 });
 ```
 
 ##### Aggressive mode
@@ -80,7 +80,7 @@ There are cases, however, when you may want to be more aggressive (as in, you wa
 
 _Example:_    
 ```js
-ouiBounce(document.getElementById('ouibounce-modal'), { aggressive: true });
+ouibounce(document.getElementById('ouibounce-modal'), { aggressive: true });
 ```
 
 ##### Set a min time before OuiBounce fires
@@ -88,7 +88,7 @@ By default, OuiBounce won't fire in the first second to prevent false positives,
 
 _Example:_    
 ```js
-ouiBounce(document.getElementById('ouibounce-modal'), { timer: 0 });
+ouibounce(document.getElementById('ouibounce-modal'), { timer: 0 });
 ```
 
 ##### Callback
@@ -96,7 +96,7 @@ You can add a callback, which is a function that will run once OuiBounce has bee
 
 _Example:_    
 ```js
-ouiBounce(document.getElementById('ouibounce-modal'), { callback: function() { console.log('OuiBounce fired!'); } });
+ouibounce(document.getElementById('ouibounce-modal'), { callback: function() { console.log('OuiBounce fired!'); } });
 ```
 
 ##### Cookie expiration
@@ -104,27 +104,27 @@ Ouibounce sets a cookie by default to prevent the modal from appearing more than
 
 _Example:_    
 ```js
-ouiBounce(document.getElementById('ouibounce-modal'), { cookieExpire: 10 });
+ouibounce(document.getElementById('ouibounce-modal'), { cookieExpire: 10 });
 ```
 
 __Multiple options:__ The options are just a javascript object, so if you want, you can also combine multiple options.
 
 _Example:_    
 ```js
-ouiBounce(document.getElementById('ouibounce-modal'), {
+ouibounce(document.getElementById('ouibounce-modal'), {
   aggressive: true,
   timer: 0,
-  callback: function() { console.log('ouiBounce fired!'); }
+  callback: function() { console.log('ouibounce fired!'); }
 });
 ```
 
 ### OuiBounce API
 
-If you save the object returned by the `ouiBounce` function, you get access to a small public API. Use this API to `fire` or `disable` OuiBounce on demand.
+If you save the object returned by the `ouibounce` function, you get access to a small public API. Use this API to `fire` or `disable` OuiBounce on demand.
 
 _Example:_    
 ```js
-var modal = ouiBounce(document.getElementById('ouibounce-modal'));
+var modal = ouibounce(document.getElementById('ouibounce-modal'));
 modal.fire(); // fire the ouibounce event
 modal.disable() // disable ouibounce, it will not fire on page exit
 ```

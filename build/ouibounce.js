@@ -6,11 +6,11 @@
   } else if (typeof exports === 'object') {
     module.exports = factory(require,exports,module);
   } else {
-    root.ouiBounce = factory();
+    root.ouibounce = factory();
   }
 }(this, function(require,exports,module) {
 
-return function ouiBounce(el, config) {
+return function ouibounce(el, config) {
   var config     = config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
