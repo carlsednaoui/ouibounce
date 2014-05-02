@@ -69,6 +69,7 @@ function ouiBounce(el, config) {
     var sitewide = (options.sitewide === true) ? ';path=/' : '';
     document.cookie = 'viewedOuibounceModal=true' + cookieExpiration + sitewide;
     _html.removeEventListener('mouseout', handleMouseout);
+    _html.removeEventListener('keydown', handleKeydown);
   }
 
   return {
