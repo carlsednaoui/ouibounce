@@ -45,10 +45,12 @@ return function ouiBounce(el, config) {
     callback();
   }
 
+  var disableKeydown = false;
   function handleKeydown(e) {
-    if(checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
+    if (disableKeydown || checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
     else if(!e.metaKey || e.keyCode != 76) return;
 
+    disableKeydown = true;
     fire();
     callback();
   }
