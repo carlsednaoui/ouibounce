@@ -5,6 +5,7 @@ function ouibounce(el, config) {
     timer        = setDefault(config.timer, 1000),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
+    sitewide     = config.sitewide === true ? ';path=/' : '',
     _html        = document.getElementsByTagName('html')[0];
 
   function setDefault(_property, _default) {
@@ -69,12 +70,17 @@ function ouibounce(el, config) {
     var options = options || {};
 
     // you can pass a specific cookie expiration when using the OuiBounce API
-    // ex: _ouiBounce.disable({ cookieExpire: 5, sitewide: true });
+    // ex: _ouiBounce.disable({ cookieExpire: 5 });
     if (typeof options.cookieExpire !== 'undefined') {
       cookieExpire = setDefaultCookieExpire(options.cookieExpire);
     }
 
-    var sitewide = (options.sitewide === true) ? ';path=/' : '';
+    // you can pass use sitewide cookies too
+    // ex: _ouiBounce.disable({ cookieExpire: 5, sitewide: true });
+    if (typeof options.sitewide !== 'undefined') {
+      sitewide = ';path=/';
+    }
+
     document.cookie = 'viewedOuibounceModal=true' + cookieExpire + sitewide;
     
     // remove listeners
