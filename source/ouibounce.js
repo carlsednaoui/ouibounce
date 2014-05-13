@@ -65,8 +65,11 @@ function ouibounce(el, config) {
     disable();
   }
 
-  function disable() {
-    document.cookie = 'viewedOuibounceModal=true' + cookieExpire;
+  function disable(options) {
+    var options = options || {};
+    var cookieExpiration = (typeof options.cookieExpire === "undefined") ? cookieExpire : setDefaultCookieExpire(options.cookieExpire);
+    var sitewide = (options.sitewide === true) ? ';path=/' : '';
+    document.cookie = 'viewedOuibounceModal=true' + cookieExpiration + sitewide;
     _html.removeEventListener('mouseout', handleMouseout);
     _html.removeEventListener('keydown', handleKeydown);
   }

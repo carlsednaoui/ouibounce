@@ -127,6 +127,7 @@ _Example:_
 var modal = ouibounce(document.getElementById('ouibounce-modal'));
 modal.fire(); // fire the ouibounce event
 modal.disable() // disable ouibounce, it will not fire on page exit
+modal.disable({ cookieExpire: 50, sitewide: true }) // disable ouibounce sitewide for 50 days. 
 ```
 
 ### Using OuiBounce with other libraries
