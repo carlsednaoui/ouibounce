@@ -64,6 +64,7 @@ OuiBounce offers a few options, such as:
 - [Timer](#set-a-min-time-before-ouibounce-fires)
 - [Callback](#callback)
 - [Cookie expiration](#cookie-expiration)
+- [Cookie domain](#cookie-domain)
 - [Sitewide cookie](#sitewide-cookie)
 - [Chaining options](#chaining-options)
 
@@ -109,6 +110,21 @@ _Example:_
 ouibounce(document.getElementById('ouibounce-modal'), { cookieExpire: 10 });
 ```
 
+##### Cookie domain
+Ouibounce sets a cookie by default to prevent the modal from appearing
+more than once per user. You can add a cookie domain using
+`cookieDomain` to specify the domain under which the cookie should work.
+By default, no extra domain information will be added. If you need a
+cookie to work also in your subdomain (like blog.example.com and
+example.com), then set a cookieDomain such as .example.com (notice the
+dot in front).
+
+_Example:_    
+```js
+ouibounce(document.getElementById('ouibounce-modal'), { cookieDomain:
+'.example.com' });
+```
+
 ##### Sitewide cookie
 You can drop sitewide cookies by using this option.
 
@@ -125,6 +141,7 @@ _Example:_
 ouibounce(document.getElementById('ouibounce-modal'), {
   aggressive: true,
   sitewide: true,
+  cookieDomain: '.example.com',
   timer: 0,
   callback: function() { console.log('ouibounce fired!'); }
 });

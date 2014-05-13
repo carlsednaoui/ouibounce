@@ -100,7 +100,7 @@ return function ouibounce(el, config) {
       cookieDomain = options.cookieDomain;
     }
 
-    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + ookieDomain + sitewide;
+    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;
 
     // remove listeners
     _html.removeEventListener('mouseout', handleMouseout);
@@ -112,6 +112,7 @@ return function ouibounce(el, config) {
     disable: disable
   };
 }
+
 ;
 
 }));
