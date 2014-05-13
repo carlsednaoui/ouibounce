@@ -71,7 +71,9 @@ return function ouibounce(el, config) {
   }
 
   function fire() {
-    el.style.display = 'block';
+    // You can use ouibounce without passing an element
+    // https://github.com/carlsednaoui/ouibounce/issues/30
+    if (el) el.style.display = 'block';
     disable();
   }
 
