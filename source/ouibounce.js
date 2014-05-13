@@ -1,4 +1,4 @@
-function ouiBounce(el, config) {
+function ouibounce(el, config) {
   var config     = config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
@@ -59,7 +59,9 @@ function ouiBounce(el, config) {
   }
 
   function fire() {
-    el.style.display = 'block';
+    // You can use ouibounce without passing an element
+    // https://github.com/carlsednaoui/ouibounce/issues/30
+    if (el) el.style.display = 'block';
     disable();
   }
 

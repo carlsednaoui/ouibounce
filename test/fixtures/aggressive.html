@@ -9,13 +9,13 @@
 
     <script>
       // initialize a counter, to test aggressive mode
-      window.ouiBounceCounter = 0;
+      window.ouibounceCounter = 0;
 
       // if the cookie was already dropped, set counter to 1
-      if (window.document.cookie === 'viewedOuibounceModal=true') window.ouiBounceCounter = 1;
+      if (window.document.cookie === 'viewedOuibounceModal=true') window.ouibounceCounter = 1;
       
-      ouiBounce(document.getElementById('ouibounce-modal'), {
-        callback: function() { window.ouiBounceCounter++; },
+      ouibounce(document.getElementById('ouibounce-modal'), {
+        callback: function() { window.ouibounceCounter++; },
         aggressive: true
       });
     </script>

@@ -9,11 +9,11 @@ var gulp      = require('gulp'),
 gulp.task('build', function() {
 
     gulp.src('source/ouibounce.js')
-        .pipe(umd_wrap({ namespace: 'ouiBounce' }))
+        .pipe(umd_wrap({ namespace: 'ouibounce' }))
         .pipe(gulp.dest('build'));
 
     gulp.src('source/ouibounce.js')
-        .pipe(umd_wrap({ namespace: 'ouiBounce' }))
+        .pipe(umd_wrap({ namespace: 'ouibounce' }))
         .pipe(uglify())
         .pipe(rename('ouibounce.min.js'))
         .pipe(gulp.dest('build'));
