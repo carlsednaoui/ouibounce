@@ -130,7 +130,7 @@ modal.disable() // disable ouibounce, it will not fire on page exit
 ```
 
 ### Using OuiBounce with other libraries
-If you want to use this library with other plugins — such as [Vex](http://github.hubspot.com/vex/docs/welcome/) — you can ouibounce with `false`.
+If you want to use this library with other plugins — such as [Vex](http://github.hubspot.com/vex/docs/welcome/) — you can call ouibounce with `false`. See [#30](https://github.com/carlsednaoui/ouibounce/issues/30) for discussion.
 
 
 ```js
@@ -138,8 +138,6 @@ var _ouibounce = ouibounce(false, {
   callback: function() { console.log('ouibounce fired!'); }
 });
 ```
-
-See [#30](https://github.com/carlsednaoui/ouibounce/issues/30) for discussion.
 
 ### Miscellaneous
 
