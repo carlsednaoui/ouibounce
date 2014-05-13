@@ -78,6 +78,7 @@ return function ouibounce(el, config) {
   function disable() {
     document.cookie = 'viewedOuibounceModal=true' + cookieExpire;
     _html.removeEventListener('mouseout', handleMouseout);
+    _html.removeEventListener('keydown', handleKeydown);
   }
 
   return {
