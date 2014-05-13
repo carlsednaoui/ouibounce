@@ -118,7 +118,7 @@ ouibounce(document.getElementById('ouibounce-modal'), {
 });
 ```
 
-### OuiBounce API
+### Ouibounce API
 
 If you save the object returned by the `ouibounce` function, you get access to a small public API. Use this API to `fire` or `disable` OuiBounce on demand.
 
@@ -128,6 +128,9 @@ var modal = ouibounce(document.getElementById('ouibounce-modal'));
 modal.fire(); // fire the ouibounce event
 modal.disable() // disable ouibounce, it will not fire on page exit
 ```
+
+### Using OuiBounce with other libraries
+If you want to use this library with other plugins — such as [Vex](http://github.hubspot.com/vex/docs/welcome/) — you can create a blank dummy object, then place the vex modal code in the callback. See #[30](/issues/30) for discussion.
 
 ### Miscellaneous
 
