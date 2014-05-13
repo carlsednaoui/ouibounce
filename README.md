@@ -64,6 +64,8 @@ OuiBounce offers a few options, such as:
 - [Timer](#set-a-min-time-before-ouibounce-fires)
 - [Callback](#callback)
 - [Cookie expiration](#cookie-expiration)
+- [Sitewide cookie](#sitewide-cookie)
+- [Chaining options](#chaining-options)
 
 ##### Sensitivity
 Define how far the mouse has to be from the window breakpoint. The higher value, the more sensitive, and the more quickly the event will fire. _Defaults to 20._
@@ -107,12 +109,22 @@ _Example:_
 ouibounce(document.getElementById('ouibounce-modal'), { cookieExpire: 10 });
 ```
 
-__Multiple options:__ The options are just a javascript object, so if you want, you can also combine multiple options.
+##### Sitewide cookie
+You can drop sitewide cookies by using this option.
+
+_Example:_    
+```js
+ouibounce(document.getElementById('ouibounce-modal'), { sitewide: true });
+```
+
+##### Chaining options
+The options are just javascript objects, you can therefore combine multiple options.
 
 _Example:_    
 ```js
 ouibounce(document.getElementById('ouibounce-modal'), {
   aggressive: true,
+  sitewide: true,
   timer: 0,
   callback: function() { console.log('ouibounce fired!'); }
 });
