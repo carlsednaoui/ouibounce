@@ -5,6 +5,7 @@ function ouibounce(el, config) {
     timer        = setDefault(config.timer, 1000),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
+    cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _html        = document.getElementsByTagName('html')[0];
 
@@ -81,8 +82,14 @@ function ouibounce(el, config) {
       sitewide = ';path=/';
     }
 
-    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + sitewide;
-    
+    // you can pass a domain string when the cookie should be read subdomain-wise
+    // ex: _ouiBounce.disable({ cookieDomain: '.example.com' });
+    if (typeof options.cookieDomain !== 'undefined') {
+      cookieDomain = ';domain=' + options.cookieDomain;
+    }
+
+    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;
+
     // remove listeners
     _html.removeEventListener('mouseout', handleMouseout);
     _html.removeEventListener('keydown', handleKeydown);
