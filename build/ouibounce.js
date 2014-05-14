@@ -89,7 +89,7 @@ return function ouibounce(el, config) {
 
     // you can pass use sitewide cookies too
     // ex: _ouiBounce.disable({ cookieExpire: 5, sitewide: true });
-    if (typeof options.sitewide !== 'undefined') {
+    if (options.sitewide === true) {
       sitewide = ';path=/';
     }
 
