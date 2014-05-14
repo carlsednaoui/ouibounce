@@ -159,6 +159,12 @@ modal.disable() // disable ouibounce, it will not fire on page exit
 modal.disable({ cookieExpire: 50, sitewide: true }) // disable ouibounce sitewide for 50 days. 
 ```
 
+##### Disable options
+The `disable` function accepts a few options:
+- [Cookie expiration](#cookie-expiration)
+- [Cookie domain](#cookie-domain)
+- [Sitewide cookie](#sitewide-cookie)
+
 ### Using Ouibounce with other libraries
 If you want to use this library with other plugins — such as [Vex](http://github.hubspot.com/vex/docs/welcome/) — you can call ouibounce with `false`. See [#30](https://github.com/carlsednaoui/ouibounce/issues/30) for discussion.
 
