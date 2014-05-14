@@ -112,7 +112,6 @@ return function ouibounce(el, config) {
     disable: disable
   };
 }
-
 ;
 
 }));
