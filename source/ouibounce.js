@@ -82,10 +82,10 @@ function ouibounce(el, config) {
       sitewide = ';path=/';
     }
 
-    // you can pass a domain string, for example when the cookie should be
-    // read subdomain-wise, e.g.: .example.com
+    // you can pass a domain string when the cookie should be read subdomain-wise
+    // ex: _ouiBounce.disable({ cookieDomain: '.example.com' });
     if (typeof options.cookieDomain !== 'undefined') {
-      cookieDomain = options.cookieDomain;
+      cookieDomain = ';domain=' + options.cookieDomain;
     }
 
     document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;
@@ -100,4 +100,3 @@ function ouibounce(el, config) {
     disable: disable
   };
 }
-
