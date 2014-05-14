@@ -110,7 +110,7 @@ ouibounce(document.getElementById('ouibounce-modal'), { cookieExpire: 10 });
 ```
 
 ##### Sitewide cookie
-You can drop sitewide cookies by using this option.
+You can drop sitewide cookies by using passing `sitewide: true`.
 
 _Example:_    
 ```js
