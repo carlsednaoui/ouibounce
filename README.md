@@ -175,8 +175,8 @@ var _ouibounce = ouibounce(false, {
 });
 ```
 
-### IE8 Support
-If you'd like Ouibounce to work in IE8, you'll need to add a shim such as [es5-shim](https://github.com/es-shims/es5-shim).
+### Legacy JS engines
+If you'd like Ouibounce to work in legacy JS engines (IE8 and below, for example), you'll need to add a shim such as [es5-shim](https://github.com/es-shims/es5-shim).
 
 ### Miscellaneous
 
