@@ -7,6 +7,8 @@ A small library enabling you to display a modal before a user leaves your websit
 
 > **Quick note**: [Let me know](https://twitter.com/carlsednaoui) if you end up using Ouibounce. I'd love to hear about your project / see Ouibounce in the wild :)
 
+![](http://cl.ly/image/2C2p0l3W1M00/ouibounce.gif)
+
 ### The philosophy behind this project
 
 This library helps you increase landing page conversion rates. From my experience, you can expect a lift of 7% to 15% depending on your audience, traffic type (paid or unpaid) and copy.
