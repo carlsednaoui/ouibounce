@@ -5,9 +5,9 @@ Ouibounce
 
 A small library enabling you to display a modal before a user leaves your website.
 
-> **Quick note**: [Let me know](https://twitter.com/carlsednaoui) if you end up using Ouibounce. I'd love to hear about your project / see Ouibounce in the wild :)
-
 ![](http://cl.ly/image/2C2p0l3W1M00/ouibounce.gif)
+
+> **Quick note**: [Let me know](https://twitter.com/carlsednaoui) if you end up using Ouibounce. I'd love to hear about your project / see Ouibounce in the wild :)
 
 ### The philosophy behind this project
 
