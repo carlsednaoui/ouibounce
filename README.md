@@ -71,7 +71,7 @@ Ouibounce offers a few options, such as:
 - [Chaining options](#chaining-options)
 
 ##### Sensitivity
-Define how far the mouse has to be from the window breakpoint. The higher value, the more sensitive, and the more quickly the event will fire. _Defaults to 20._
+Ouibounce fires when the mouse cursor moves close to (or passes) the top of the viewport. You can define how far the mouse has to be before Ouibounce fires. The higher value, the more sensitive, and the more quickly the event will fire. _Defaults to 20._
 
 _Example:_    
 ```js
