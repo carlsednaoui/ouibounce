@@ -24,7 +24,7 @@ describe('Performs basic OuiBounce functionality', function() {
 
     // fire OuiBounce, ensure OuiBouce cookie was dropped
     browser
-      .fire('html', 'mouseout')
+      .fire('html', 'mouseleave')
       .then(function() {
         should(_this.window.document.cookie).eql('viewedOuibounceModal=true');
         should(_this.window.ouibounceCounter).equal(1);
@@ -41,7 +41,7 @@ describe('Performs basic OuiBounce functionality', function() {
 
     // fire OuiBounce, ensure OuiBouce does NOT go off again
     browser
-      .fire('html', 'mouseout')
+      .fire('html', 'mouseleave')
       .then(function() {
         should(_this.window.ouibounceCounter).equal(1);
       })
@@ -65,7 +65,7 @@ describe('Performs basic OuiBounce functionality', function() {
 
     // fire OuiBounce, ensure OuiBouce does NOT go off again
     browser
-      .fire('html', 'mouseout')
+      .fire('html', 'mouseleave')
       .then(function() {
         should(_this.window.ouibounceCounter).equal(2);
       })

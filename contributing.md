@@ -7,12 +7,14 @@ If you have any questions or feedback don't hesitate to reach out via [Twitter](
 ### Getting OuiBounce to Work Locally
 To get OuiBounce ready locally you'll need to:
 
-- Clone the repo
-- Run `npm install`
-- Make sure `gulp` is installed globally
+ 1. Clone the repo
+ 1. Run `npm install`
+ 1.  Make sure `gulp` is installed globally
     - You can do that by running `npm install -g gulp`
-- Open the index file in the "test" folder
-    - Note: Cookies won't work if you simply open the file. You'll need to have a server ready to serve the page. The easies way is to run this: `python -m SimpleHTTPServer`
+ 1. Open the index file in the `/test/` folder -- 
+    - Note: Cookies won't work if you simply open the file. You'll need to have a server ready to serve the page. The easiest way is to
+      - run: `python -m SimpleHTTPServer`
+      - [http://127.0.0.1:8000/test/index.html](http://127.0.0.1:8000/test/index.html)
 
 ### Dev Build
 To minify OuiBounce run `gulp build` from the command line.
