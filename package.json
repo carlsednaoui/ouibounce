@@ -1,5 +1,5 @@
 {
-  "name": "bounce-exchange-alternative",
+  "name": "ouibounce",
   "version": "0.0.8",
   "description": "Show some HTML before visitors leave your site.",
   "main": "build/ouibounce.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/carlsednaoui/bounce-exchange-alternative.git"
+    "url": "git://github.com/carlsednaoui/ouibounce.git"
   },
   "author": "Carl Sednaoui",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/carlsednaoui/bounce-exchange-alternative/issues"
+    "url": "https://github.com/carlsednaoui/ouibounce/issues"
   },
-  "homepage": "https://github.com/carlsednaoui/bounce-exchange-alternative",
+  "homepage": "https://github.com/carlsednaoui/ouibounce",
   "devDependencies": {
     "gulp": "~3.5.0",
     "gulp-uglify": "~0.1.0",
