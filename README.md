@@ -31,9 +31,14 @@ Not sure what I mean by _provide value_? Here are a few ideas to get your creati
 
 ## Installation
 
-- Download the [minified](build/ouibounce.min.js) or [unminified](build/ouibounce.js) script and include it on your page. Ouibounce is wrapped by a [umd wrapper](https://github.com/ForbesLindesay/umd), so if you are using _requirejs/amd_ or _commonjs/browserify_, it will still work fine.
-- You can also get Ouibounce from [cdnjs.com](http://cdnjs.com/libraries/ouibounce/).
-- Another option is to use Bower: `curl http://bower.herokuapp.com/packages/ouibounce`
+You have a few options to choose from:
+
+- Download the [minified](build/ouibounce.min.js) or [unminified](build/ouibounce.js) script and include it on your page
+- Get Ouibounce from [cdnjs.com](http://cdnjs.com/libraries/ouibounce/)
+- Use Bower: `curl http://bower.herokuapp.com/packages/ouibounce`
+- Use NPM: `npm install git://github.com/carlsednaoui/ouibounce.git`
+
+_Note_: Ouibounce is wrapped by a [umd wrapper](https://github.com/ForbesLindesay/umd), so if you are using _requirejs/amd_ or _commonjs/browserify_, it will still work fine.
 
 ## Usage
 
