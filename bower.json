@@ -1,0 +1,29 @@
+{
+  "name": "ouibounce",
+  "version": "0.0.8",
+  "homepage": "https://github.com/carlsednaoui/ouibounce",
+  "authors": [
+    "Carl Sednaoui"
+  ],
+  "description": "Show some HTML before visitors leave your site.",
+  "main": "build/ouibounce.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "modal",
+    "leave",
+    "page",
+    "marketing"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source",
+    "test",
+    "tests"
+  ]
+}
