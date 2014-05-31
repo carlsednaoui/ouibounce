@@ -37,11 +37,11 @@ return function ouibounce(el, config) {
 
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
-    _html.addEventListener('mouseout', handleMouseout);
+    _html.addEventListener('mouseleave', handleMouseleave);
     _html.addEventListener('keydown', handleKeydown);
   }
 
-  function handleMouseout(e) {
+  function handleMouseleave(e) {
     if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
     fire();
     callback();
@@ -103,7 +103,7 @@ return function ouibounce(el, config) {
     document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;
 
     // remove listeners
-    _html.removeEventListener('mouseout', handleMouseout);
+    _html.removeEventListener('mouseleave', handleMouseleave);
     _html.removeEventListener('keydown', handleKeydown);
   }
 
