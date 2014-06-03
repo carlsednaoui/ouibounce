@@ -15,7 +15,8 @@ return function ouibounce(el, config) {
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
     timer        = setDefault(config.timer, 1000),
-    callback     = config.callback || function() {},
+    onLeave      = config.onLeave || function() {},
+    onReEnter    = config.onReEnter || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
     sitewide     = config.sitewide === true ? ';path=/' : '',
@@ -39,12 +40,14 @@ return function ouibounce(el, config) {
   function attachOuiBounce() {
     _html.addEventListener('mouseleave', handleMouseleave);
     _html.addEventListener('keydown', handleKeydown);
+    _html.addEventListener('mouseenter', handleMouseenter);
   }
 
   function handleMouseleave(e) {
     if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
     fire();
-    callback();
+    onLeave();
+    mouseLeft = true;
   }
 
   var disableKeydown = false;
@@ -54,7 +57,16 @@ return function ouibounce(el, config) {
 
     disableKeydown = true;
     fire();
-    callback();
+    onLeave();
+    mouseLeft = true;
+  }
+
+  var mouseLeft = false;
+  function handleMouseenter() {
+    if (mouseLeft) {
+      onReEnter();
+      mouseLeft = false;
+    }
   }
 
   function checkCookieValue(cookieName, value) {

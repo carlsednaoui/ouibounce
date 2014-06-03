@@ -12,7 +12,7 @@
       window.ouibounceCounter = 0;
       
       ouibounce(document.getElementById('ouibounce-modal'), {
-        callback: function() { window.ouibounceCounter++; }
+        onLeave: function() { window.ouibounceCounter++; }
       });
     </script>
   </body>

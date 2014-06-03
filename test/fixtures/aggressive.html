@@ -15,7 +15,7 @@
       if (window.document.cookie === 'viewedOuibounceModal=true') window.ouibounceCounter = 1;
       
       ouibounce(document.getElementById('ouibounce-modal'), {
-        callback: function() { window.ouibounceCounter++; },
+        onLeave: function() { window.ouibounceCounter++; },
         aggressive: true
       });
     </script>
