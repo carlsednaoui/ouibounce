@@ -22,6 +22,10 @@ return function ouibounce(el, config) {
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _html        = document.getElementsByTagName('html')[0];
 
+  // flag variables
+  var mouseLeaveFlag = false,
+      keydownFlag = false;
+
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
   }
@@ -46,26 +50,20 @@ return function ouibounce(el, config) {
   function handleMouseleave(e) {
     if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
     fire();
-    onLeave();
-    mouseLeft = true;
   }
 
-  var disableKeydown = false;
   function handleKeydown(e) {
-    if (disableKeydown || checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
+    if (keydownFlag || checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
     else if(!e.metaKey || e.keyCode != 76) return;
 
-    disableKeydown = true;
+    keydownFlag = true;
     fire();
-    onLeave();
-    mouseLeft = true;
   }
 
-  var mouseLeft = false;
   function handleMouseenter() {
-    if (mouseLeft) {
+    if (mouseLeaveFlag) {
       onReEnter();
-      mouseLeft = false;
+      mouseLeaveFlag = false;
     }
   }
 
@@ -88,7 +86,10 @@ return function ouibounce(el, config) {
     // You can use ouibounce without passing an element
     // https://github.com/carlsednaoui/ouibounce/issues/30
     if (el) el.style.display = 'block';
+    
     disable();
+    onLeave();
+    mouseLeaveFlag = true;
   }
 
   function disable(options) {
