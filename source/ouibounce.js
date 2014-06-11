@@ -8,18 +8,18 @@ function ouibounce(el, config) {
     cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _html        = document.getElementsByTagName('html')[0],
-	lastY        = 1e10, // really big number so as not to trip trigger
+	lastY        = 0, // really small number so as not to initially block direction check
 	listen = function (eventName, fn, isOff, ev) {
 			if (_html.addEventListener) {
 				ev = isOff ? _html.removeEventListener : _html.addEventListener;
 
-				ev(eventName, fn, false);
+				ev.call(_html, eventName, fn, false);
 			}
 			// < IE11
 			else if (_html.attachEvent) {
 				ev = isOff ? _html.detachEvent : _html.attachEvent;
 
-				ev('on' + eventName, fn);
+				ev.call(_html, 'on' + eventName, fn);
 			}
 	}
 	;
@@ -42,6 +42,16 @@ function ouibounce(el, config) {
   function attachOuiBounce() {
   	listen('mouseleave', handleMouseleave);
   	listen('keydown', handleKeydown);
+    listen('mousemove', handleMousemove);
+  }
+
+  var debuge = function (e) {
+  		console.log({ mscreen: e.screenY, mclient: e.clientY, l: lastY, e: e });
+	};
+
+  function handleMousemove(e) {
+	  debuge(e);
+  	lastY = e.clientY; // remember previous Y so we can check direction of leaving
   }
 
   function handleMouseleave(e) {
@@ -49,9 +59,9 @@ function ouibounce(el, config) {
   	//    * not close enough to top
   	//    * not moving towards the top (negatively Y-axis)
   	//    * we've already viewed it
-	//    * it's not IN YOUR FAAACE
-    var stop = e.clientY > sensitivity || e.clientY > lastY || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive);
-    lastY = e.clientY;
+  	//    * it's not IN YOUR FAAACE
+  	debuge(e);
+    var stop = e.screenY > sensitivity || e.screenY > lastY || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive);
     if (stop) return;
     fire();
     callback();
@@ -115,6 +125,7 @@ function ouibounce(el, config) {
     // remove listeners
     listen('mouseleave', handleMouseleave, 1);
     listen('keydown', handleKeydown, 1);
+    listen('mousemove', handleMousemove, 1);
   }
 
   return {
