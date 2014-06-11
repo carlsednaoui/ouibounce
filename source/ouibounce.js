@@ -1,13 +1,28 @@
 function ouibounce(el, config) {
-  var config     = config || {},
-    aggressive   = config.aggressive || false,
+	config = config || {}; // protect against null config
+  var aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
     timer        = setDefault(config.timer, 1000),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
     sitewide     = config.sitewide === true ? ';path=/' : '',
-    _html        = document.getElementsByTagName('html')[0];
+    _html        = document.getElementsByTagName('html')[0],
+	lastY        = 1e10, // really big number so as not to trip trigger
+	listen = function (eventName, fn, isOff, ev) {
+			if (_html.addEventListener) {
+				ev = isOff ? _html.removeEventListener : _html.addEventListener;
+
+				ev(eventName, fn, false);
+			}
+			// < IE11
+			else if (_html.attachEvent) {
+				ev = isOff ? _html.detachEvent : _html.attachEvent;
+
+				ev('on' + eventName, fn);
+			}
+	}
+	;
 
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
@@ -25,12 +40,19 @@ function ouibounce(el, config) {
 
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
-    _html.addEventListener('mouseleave', handleMouseleave);
-    _html.addEventListener('keydown', handleKeydown);
+  	listen('mouseleave', handleMouseleave);
+  	listen('keydown', handleKeydown);
   }
 
   function handleMouseleave(e) {
-    if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
+  	// skip if:
+  	//    * not close enough to top
+  	//    * not moving towards the top (negatively Y-axis)
+  	//    * we've already viewed it
+	//    * it's not IN YOUR FAAACE
+    var stop = e.clientY > sensitivity || e.clientY > lastY || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive);
+    lastY = e.clientY;
+    if (stop) return;
     fire();
     callback();
   }
@@ -91,8 +113,8 @@ function ouibounce(el, config) {
     document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;
 
     // remove listeners
-    _html.removeEventListener('mouseleave', handleMouseleave);
-    _html.removeEventListener('keydown', handleKeydown);
+    listen('mouseleave', handleMouseleave, 1);
+    listen('keydown', handleKeydown, 1);
   }
 
   return {
