@@ -45,9 +45,6 @@ function ouibounce(el, config) {
     listen('mousemove', handleMousemove);
   }
 
-  var debuge = function (e) {
-  		console.log({ mscreen: e.screenY, mclient: e.clientY, y: gety(e), l: lastY, event: e.type, e: e });
-	};
 
   function gety(e) {
   	/// <summary>
@@ -59,9 +56,8 @@ function ouibounce(el, config) {
 		return e.screenY;
 	}
 
-	function handleMousemove(e) {
-	  debuge(e);
-  	lastY = gety(e); // remember previous Y so we can check direction of leaving
+  function handleMousemove(e) {
+    lastY = gety(e); // remember previous Y so we can check direction of leaving
   }
 
   function handleMouseleave(e) {
@@ -70,7 +66,6 @@ function ouibounce(el, config) {
   	//    * not moving towards the top (negatively Y-axis)
   	//    * we've already viewed it
   	//    * it's not IN YOUR FAAACE
-  	debuge(e);
   	var stop = gety(e) > sensitivity || gety(e) >= lastY || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive);
     if (stop) return;
     fire();
