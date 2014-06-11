@@ -1,14 +1,14 @@
 function ouibounce(el, config) {
 	config = config || {}; // protect against null config
   var aggressive   = config.aggressive || false,
-    sensitivity  = setDefault(config.sensitivity, 20),
+    sensitivity  = setDefault(config.sensitivity, 100),
     timer        = setDefault(config.timer, 1000),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _html        = document.getElementsByTagName('html')[0],
-	lastY        = 0, // really small number so as not to initially block direction check
+	lastY        = -1e10, // really small number so as not to initially block direction check
 	listen = function (eventName, fn, isOff, ev) {
 			if (_html.addEventListener) {
 				ev = isOff ? _html.removeEventListener : _html.addEventListener;
@@ -46,12 +46,22 @@ function ouibounce(el, config) {
   }
 
   var debuge = function (e) {
-  		console.log({ mscreen: e.screenY, mclient: e.clientY, l: lastY, e: e });
+  		console.log({ mscreen: e.screenY, mclient: e.clientY, y: gety(e), l: lastY, event: e.type, e: e });
 	};
 
-  function handleMousemove(e) {
+  function gety(e) {
+  	/// <summary>
+  	/// Standardize how to get the Y coordinate from a mouse event, so we can easily change it if necessary
+  	/// </summary>
+  	/// <param name="e">mouse event arg</param>
+  	/// <returns type="int">relevant Y-coordinate</returns>
+	  
+		return e.screenY;
+	}
+
+	function handleMousemove(e) {
 	  debuge(e);
-  	lastY = e.clientY; // remember previous Y so we can check direction of leaving
+  	lastY = gety(e); // remember previous Y so we can check direction of leaving
   }
 
   function handleMouseleave(e) {
@@ -61,7 +71,7 @@ function ouibounce(el, config) {
   	//    * we've already viewed it
   	//    * it's not IN YOUR FAAACE
   	debuge(e);
-    var stop = e.screenY > sensitivity || e.screenY > lastY || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive);
+  	var stop = gety(e) > sensitivity || gety(e) >= lastY || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive);
     if (stop) return;
     fire();
     callback();
