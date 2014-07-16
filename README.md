@@ -69,6 +69,7 @@ Ouibounce offers a few options, such as:
 - [Sensitivity](#sensitivity)
 - [Aggressive mode](#aggressive-mode)
 - [Timer](#set-a-min-time-before-ouibounce-fires)
+- [Delay](#delay)
 - [Callback](#callback)
 - [Cookie expiration](#cookie-expiration)
 - [Cookie domain](#cookie-domain)
@@ -99,6 +100,16 @@ By default, Ouibounce won't fire in the first second to prevent false positives,
 _Example:_    
 ```js
 ouibounce(document.getElementById('ouibounce-modal'), { timer: 0 });
+```
+
+##### Delay
+By default, Ouibounce will show the modal immediately.  You could instead configure it to wait `x` milliseconds before showing the modal.  If the user's mouse re-enters the body before `delay` ms have passed, the modal will not appear.  This can be used to provide a "grace period" for visitors instead of immediately presenting the modal window.
+
+_Example:_
+
+```js
+// Wait 100 ms
+ouibounce(document.getElementById('ouibounce-modal'), { delay: 100 });
 ```
 
 ##### Callback
