@@ -1,7 +1,9 @@
-Ouibounce
----------
+# OuiBounce
+> Built by [Carl Sednaoui](http://carlsednaoui.com/about?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui) — Marketing Engineer at [Thinkful](http://www.thinkful.com?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui), Co-Creator of [MailCharts](http://www.mailcharts.com/?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui).  
 
-[![tests](http://img.shields.io/travis/carlsednaoui/ouibounce.svg?style=flat)](https://travis-ci.org/carlsednaoui/ouibounce) [![twitter](http://img.shields.io/badge/twitter-@carlsednaoui-blue.svg?style=flat)](http://twitter.com/carlsednaoui) [![gittip](http://img.shields.io/gittip/carlsednaoui.svg?style=flat)](https://www.gittip.com/carlsednaoui/)
+
+
+[![tests](http://img.shields.io/travis/carlsednaoui/ouibounce.svg?style=flat)](https://travis-ci.org/carlsednaoui/ouibounce) [![twitter](http://img.shields.io/badge/twitter-@carlsednaoui-blue.svg?style=flat)](http://twitter.com/carlsednaoui)
 
 A small library enabling you to display a modal before a user leaves your website.
 
