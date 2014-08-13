@@ -185,11 +185,11 @@ var _ouibounce = ouibounce(false, {
 ```
 
 ### Using Ouibounce with WordPress: [wBounce](http://kevinw.de/wbounce) by Kevin Weber
-> Digital marketer [Kevin Weber](http://kevinw.de) brings Ouibounce to WordPress and enriches it with additional features.
+> Digital Marketer [Kevin Weber](http://kevinw.de) brings Ouibounce to WordPress and extends it.
 
 [![twitter](http://img.shields.io/badge/twitter-@kevinweber-blue.svg?style=flat)](http://twitter.com/kevinweber)
 
-You can download it for free from [wordpress.org/plugins/wbounce/](https://wordpress.org/plugins/wbounce/)
+Download it for free from [wordpress.org/plugins/wbounce/](https://wordpress.org/plugins/wbounce/).
 
 ### Legacy JS engines
 If you'd like Ouibounce to work in legacy JS engines (IE8 and below, for example), you'll need to add a shim such as [es5-shim](https://github.com/es-shims/es5-shim).
