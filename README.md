@@ -1,4 +1,4 @@
-# OuiBounce
+# Ouibounce
 > Built by [Carl Sednaoui](http://carlsednaoui.com/about?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui) — Marketing Engineer at [Thinkful](http://www.thinkful.com?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui), Co-Creator of [MailCharts](http://www.mailcharts.com/?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui).  
 
 
@@ -186,6 +186,9 @@ var _ouibounce = ouibounce(false, {
 
 ### Legacy JS engines
 If you'd like Ouibounce to work in legacy JS engines (IE8 and below, for example), you'll need to add a shim such as [es5-shim](https://github.com/es-shims/es5-shim).
+
+### WordPress
+[Kevin Weber](http://kevinw.de/wbounce) wrote [wBounce](https://wordpress.org/plugins/wbounce/), a WordPress plugin. I personally have __not__ tested it, but you should check it out.
 
 ### Miscellaneous
 
