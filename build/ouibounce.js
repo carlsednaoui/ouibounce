@@ -34,7 +34,7 @@ return function ouibounce(el, config) {
     var date = new Date();
     date.setTime(date.getTime() + ms);
 
-    return "; expires=" + date.toGMTString();
+    return "; expires=" + date.toUTCString();
   }
 
   setTimeout(attachOuiBounce, timer);
@@ -60,7 +60,7 @@ return function ouibounce(el, config) {
   var disableKeydown = false;
   function handleKeydown(e) {
     if (disableKeydown || checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
-    else if(!e.metaKey || e.keyCode != 76) return;
+    else if(!e.metaKey || e.keyCode !== 76) return;
 
     disableKeydown = true;
     _delayTimer = setTimeout(_fireAndCallback, delay);

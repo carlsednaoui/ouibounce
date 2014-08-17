@@ -22,7 +22,7 @@ function ouibounce(el, config) {
     var date = new Date();
     date.setTime(date.getTime() + ms);
 
-    return "; expires=" + date.toGMTString();
+    return "; expires=" + date.toUTCString();
   }
 
   setTimeout(attachOuiBounce, timer);
