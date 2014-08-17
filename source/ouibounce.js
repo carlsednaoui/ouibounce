@@ -9,7 +9,7 @@ function ouibounce(el, config) {
     cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _delayTimer  = null,
-    _html        = document.getElementsByTagName('html')[0];
+    _html        = document.documentElement;
 
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
@@ -48,25 +48,26 @@ function ouibounce(el, config) {
   var disableKeydown = false;
   function handleKeydown(e) {
     if (disableKeydown || checkCookieValue('viewedOuibounceModal', 'true') && !aggressive) return;
-    else if(!e.metaKey || e.keyCode != 76) return;
+    else if(!e.metaKey || e.keyCode !== 76) return;
 
     disableKeydown = true;
     _delayTimer = setTimeout(_fireAndCallback, delay);
   }
 
   function checkCookieValue(cookieName, value) {
+    return parseCookies()[cookieName] === value;
+  }
+
+  function parseCookies() {
     // cookies are separated by '; '
-    var cookies = document.cookie.split('; ').reduce(function(prev, curr) {
-      // split by '=' to get key, value pairs
-      var el = curr.split('=');
-
-      // add the cookie to fn object
-      prev[el[0]] = el[1];
-
-      return prev;
-    }, {});
-
-    return cookies[cookieName] === value;
+    var cookies = document.cookie.split('; ');
+    
+    var ret = {};
+    for (var i = cookies.length - 1; i >= 0; i--) {
+      var el = cookies[i].split('=');
+      ret[el[0]] = el[1];
+    }
+    return ret;
   }
 
   function _fireAndCallback() {
