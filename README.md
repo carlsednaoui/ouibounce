@@ -1,4 +1,4 @@
-# OuiBounce
+# Ouibounce
 > Built by [Carl Sednaoui](http://carlsednaoui.com/about?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui) — Marketing Engineer at [Thinkful](http://www.thinkful.com?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui), Co-Creator of [MailCharts](http://www.mailcharts.com/?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carl-sednaoui).  
 
 
