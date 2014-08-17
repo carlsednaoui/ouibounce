@@ -1,0 +1,85 @@
+﻿
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ouibounce example page</title>
+    <script src="../source/ouibounce.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="modal.css">
+    
+    <!-- external dependencies -->
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Ouibounce</h1>
+      <h2>Increase your landing page conversion rates</h2>
+    </header>
+
+    <div class="container">
+      <p>Ouibounce enables you to display a modal before a user leaves your website, helping you increase your landing page conversion rates. From experience, you can expect a 7% to 15% conversion rate increase - depending on your audience, traffic quality and offer.</p>
+
+      <h2>A powerful library</h2>
+      <p>Ouibounce is incredibly easy to install and it comes with powerful features, helping you control every aspect of the user experience. Visit the GitHup repo to learn more!</p>
+
+      <a href="https://github.com/carlsednaoui/ouibounce" class="button">View Ouibounce on GitHub</a>
+
+      <h2>Interactive demo</h2>
+      <p>To see how Ouibounce works, simply try to close this tab.</p>
+    </div>
+
+    <!-- Ouibounce Modal -->
+    <div id="ouibounce-modal">
+      <div class="underlay"></div>
+      <div class="modal">
+        <div class="modal-title">
+          <h3>This is a Ouibounce modal</h3>
+        </div>
+
+        <div class="modal-body">
+          <p>Thanks for stoping by!</p>
+          <br>
+          <p>You can style your Ouibounce modal however you see fit. You can also include big buttons, an email capture or just plain text. The sky's the limit!</p>
+          <br>
+          <p>Close this modal by clicking "No Thanks" below or clicking anywhere outside of the modal.</p>
+
+          <form>
+            <input type="text" placeholder="you@email.com">
+            <input type="submit" value="learn more &raquo;">
+            <p class="form-notice">*this is a fake form</p>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <p>no thanks</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example page JS        -->
+    <!-- Used to fire the modal -->
+    <script>
+
+    	// if you want to use the 'fire' or 'disable' fn,
+    	// you need to save OuiBounce to an object
+    	var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
+    		aggressive: true,
+    		timer: 0,
+    		callback: function () { console.log('ouibounce fired!'); }
+    	});
+
+    	$('body').on('click', function () {
+    		$('#ouibounce-modal').hide();
+    	});
+
+    	$('#ouibounce-modal .modal-footer').on('click', function () {
+    		$('#ouibounce-modal').hide();
+    	});
+
+    	$('#ouibounce-modal .modal').on('click', function (e) {
+    		e.stopPropagation();
+    	});
+    </script>
+  </body>
+</html>
