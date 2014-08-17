@@ -3,10 +3,12 @@ function ouibounce(el, config) {
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
     timer        = setDefault(config.timer, 1000),
+    delay        = setDefault(config.delay, 0),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
     sitewide     = config.sitewide === true ? ';path=/' : '',
+    _delayTimer  = null,
     _html        = document.getElementsByTagName('html')[0];
 
   function setDefault(_property, _default) {
@@ -26,13 +28,21 @@ function ouibounce(el, config) {
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
     _html.addEventListener('mouseleave', handleMouseleave);
+    _html.addEventListener('mouseenter', handleMouseenter);
     _html.addEventListener('keydown', handleKeydown);
   }
 
   function handleMouseleave(e) {
     if (e.clientY > sensitivity || (checkCookieValue('viewedOuibounceModal', 'true') && !aggressive)) return;
-    fire();
-    callback();
+
+    _delayTimer = setTimeout(_fireAndCallback, delay);
+  }
+
+  function handleMouseenter(e) {
+    if (_delayTimer) {
+      clearTimeout(_delayTimer);
+      _delayTimer = null;
+    }
   }
 
   var disableKeydown = false;
@@ -41,8 +51,7 @@ function ouibounce(el, config) {
     else if(!e.metaKey || e.keyCode != 76) return;
 
     disableKeydown = true;
-    fire();
-    callback();
+    _delayTimer = setTimeout(_fireAndCallback, delay);
   }
 
   function checkCookieValue(cookieName, value) {
@@ -58,6 +67,11 @@ function ouibounce(el, config) {
     }, {});
 
     return cookies[cookieName] === value;
+  }
+
+  function _fireAndCallback() {
+    fire();
+    callback();
   }
 
   function fire() {
@@ -92,6 +106,7 @@ function ouibounce(el, config) {
 
     // remove listeners
     _html.removeEventListener('mouseleave', handleMouseleave);
+    _html.removeEventListener('mouseenter', handleMouseenter);
     _html.removeEventListener('keydown', handleKeydown);
   }
 
