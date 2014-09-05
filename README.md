@@ -195,6 +195,9 @@ var _ouibounce = ouibounce(false, {
 });
 ```
 
+##### Twitter Bootstrap
+If you're trying to use Ouibounce with Twitter Bootstrap and are simply copying the example code I've included in the demo, you might run into some problems. See #66 to fix this.
+
 ### Legacy JS engines
 If you'd like Ouibounce to work in legacy JS engines (IE8 and below, for example), you'll need to add a shim such as [es5-shim](https://github.com/es-shims/es5-shim).
 
