@@ -38,7 +38,7 @@ You have a few options to choose from:
 - Download the [minified](build/ouibounce.min.js) or [unminified](build/ouibounce.js) script and include it on your page
 - Get Ouibounce from [cdnjs.com](http://cdnjs.com/libraries/ouibounce/)
 - Use Bower: `curl http://bower.herokuapp.com/packages/ouibounce`
-- Use NPM: `npm install git://github.com/carlsednaoui/ouibounce.git`
+- Use NPM: `npm install ouibounce`
 
 _Note_: Ouibounce is wrapped by a [umd wrapper](https://github.com/ForbesLindesay/umd), so if you are using _requirejs/amd_ or _commonjs/browserify_, it will still work fine.
 
