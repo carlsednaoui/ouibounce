@@ -117,7 +117,7 @@ return function ouibounce(el, config) {
     }
 
     if (typeof options.cookieName !== 'undefined') {
-      cookieName = 'viewedOuibounceModal';
+      cookieName = options.cookieName;
     }
 
     document.cookie = cookieName + '=true' + cookieExpire + cookieDomain + sitewide;
