@@ -75,6 +75,7 @@ Ouibounce offers a few options, such as:
 - [Callback](#callback)
 - [Cookie expiration](#cookie-expiration)
 - [Cookie domain](#cookie-domain)
+- [Cookie name](#cookie-name)
 - [Sitewide cookie](#sitewide-cookie)
 - [Chaining options](#chaining-options)
 
@@ -145,6 +146,14 @@ ouibounce(document.getElementById('ouibounce-modal'), { cookieDomain:
 '.example.com' });
 ```
 
+##### Cookie name
+You can specify cookie name passing `cookieName: 'customCookieName'`.
+
+_Example:_    
+```js
+ouibounce(document.getElementById('ouibounce-modal'), { cookieName: 'customCookieName' });
+```
+
 ##### Sitewide cookie
 You can drop sitewide cookies by using passing `sitewide: true`.
 
@@ -183,6 +192,7 @@ modal.disable({ cookieExpire: 50, sitewide: true }) // disable ouibounce sitewid
 The `disable` function accepts a few options:
 - [Cookie expiration](#cookie-expiration)
 - [Cookie domain](#cookie-domain)
+- [Cookie name](#cookie-name)
 - [Sitewide cookie](#sitewide-cookie)
 
 ### Using Ouibounce with other libraries
