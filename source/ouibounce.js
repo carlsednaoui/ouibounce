@@ -13,7 +13,7 @@ return function ouibounce(el, config) {
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
     timer        = setDefault(config.timer, 1000),
-    autoFire   = setDefault(config.autoFire, null),
+    autoFire     = setDefault(config.autoFire, null),
     delay        = setDefault(config.delay, 0),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
