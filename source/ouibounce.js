@@ -1,8 +1,19 @@
-function ouibounce(el, config) {
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory(require,exports,module);
+  } else {
+    root.ouibounce = factory();
+  }
+}(this, function(require,exports,module) {
+
+return function ouibounce(el, config) {
   var config     = config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
     timer        = setDefault(config.timer, 1000),
+    autoFire   = setDefault(config.autoFire, null),
     delay        = setDefault(config.delay, 0),
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
@@ -71,6 +82,19 @@ function ouibounce(el, config) {
     return ret;
   }
 
+  function isInteger(x) {
+    return (typeof x === 'number') && (x % 1 === 0);
+  }
+
+  function handleAutoFire(e) {
+  if ( (checkCookieValue( cookieName, 'true') && !aggressive) ) return;
+    _delayTimer = setTimeout(_fireAndCallback, delay);
+  }
+
+  if ( isInteger(autoFire) && autoFire !== null ) {
+  setTimeout( handleAutoFire, autoFire );
+  }
+
   function _fireAndCallback() {
     fire();
     callback();
@@ -121,3 +145,6 @@ function ouibounce(el, config) {
     disable: disable
   };
 }
+;
+
+}));
