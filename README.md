@@ -30,6 +30,16 @@ Not sure what I mean by _provide value_? Here are a few ideas to get your creati
 - [Example #1](http://carlsednaoui.github.io/ouibounce/)
 - [Example #2](http://colors.carlsednaoui.com/)
 
+## Modal inspiration
+
+I've designed a few modals just for you. Feel free to use these as inspiration.
+
+![fancy with content](https://cloud.githubusercontent.com/assets/791818/5060267/60768e64-6d1a-11e4-813e-b4c6f9ea4e9f.png)
+![fancy no header](https://cloud.githubusercontent.com/assets/791818/5060264/6071f214-6d1a-11e4-8a4b-ae929b337a3f.png)
+![simple](https://cloud.githubusercontent.com/assets/791818/5060268/607786e8-6d1a-11e4-9084-3430e2a158d8.png)
+![simple with book](https://cloud.githubusercontent.com/assets/791818/5060265/6074d65a-6d1a-11e4-928b-84712ae80e22.png)
+![simple with feedback](https://cloud.githubusercontent.com/assets/791818/5060266/6075d2b2-6d1a-11e4-891a-40a16465aa9a.png)
+
 
 ## Installation
 
