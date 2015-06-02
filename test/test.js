@@ -5,7 +5,7 @@ var should = require('should'),
 var browser = new Zombie();
 
 describe('Performs basic OuiBounce functionality', function() {
-  
+
   before(function(done) {
     loadPage.call(this, 'basic.html', done);
   });
@@ -50,8 +50,8 @@ describe('Performs basic OuiBounce functionality', function() {
 });
 
 
-describe('Performs basic OuiBounce functionality', function() {
-  
+describe('Performs aggressive OuiBounce functionality', function() {
+
   before(function(done) {
     loadPage.call(this, 'aggressive.html', done);
   });
@@ -70,6 +70,26 @@ describe('Performs basic OuiBounce functionality', function() {
         should(_this.window.ouibounceCounter).equal(2);
       })
       .then(done);
+  });
+});
+
+describe('Performs manual OuiBounce functionality', function() {
+
+  before(function(done) {
+    loadPage.call(this, 'manual.html', done);
+  });
+
+  it('should invoke the callback when manually fired', function(done) {
+    // save window context
+    _this = this;
+
+    // ensure ouiBouce already fired
+    should(_this.window.ouibounceFired).equal(false);
+
+    _this.window.modal.fire();
+
+    should(_this.window.ouibounceFired).equal(true);
+    done();
   });
 });
 

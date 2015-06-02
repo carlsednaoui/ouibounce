@@ -29,6 +29,8 @@
     "mocha": "~1.17.1",
     "should": "~3.1.2",
     "zombie": "~2.0.0-alpha29",
-    "gulp-stylus": "0.0.13"
+    "gulp-stylus": "0.0.13",
+    "jshint-stylish": "~2.0.0",
+    "gulp-jshint": "~1.11.0"
   }
 }
