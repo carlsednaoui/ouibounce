@@ -1,11 +1,11 @@
 # Ouibounce
-> Built by [Carl Sednaoui](http://carlsednaoui.com/about?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui) — Co founder of [MailCharts](http://www.mailcharts.com/?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui).  
+> Originally created by [Carl Sednaoui](http://carlsednaoui.com/about?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui) from [MailCharts](http://www.mailcharts.com/?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui). Maintained and improved by a [few contributors](/graphs/contributors). 
 
 
 
 [![tests](http://img.shields.io/travis/carlsednaoui/ouibounce.svg?style=flat)](https://travis-ci.org/carlsednaoui/ouibounce) [![twitter](http://img.shields.io/badge/twitter-@carlsednaoui-blue.svg?style=flat)](http://twitter.com/carlsednaoui)
 
-A small library enabling you to display a modal before a user leaves your website.
+Ouibounce: A small library enabling you to display a modal before a user leaves your website.
 
 ![](http://cl.ly/image/2C2p0l3W1M00/ouibounce.gif)
 
@@ -222,7 +222,9 @@ If you're trying to use Ouibounce with Twitter Bootstrap and are simply copying 
 If you'd like Ouibounce to work in legacy JS engines (IE8 and below, for example), you'll need to add a shim such as [es5-shim](https://github.com/es-shims/es5-shim).
 
 ### WordPress
-[Kevin Weber](http://kevinw.de/wbounce) wrote [wBounce](https://wordpress.org/plugins/wbounce/), a WordPress plugin. I personally have __not__ tested it, but you should check it out.
+[Tomaž](https://github.com/tomazzaman) wrote [a great tutorial](https://codeable.io/community/how-to-build-your-own-wordpress-email-form-optin-form/) on how to build your own WordPress opt-in form.
+
+[Kevin Weber](http://kevinw.de/wbounce) wrote [wBounce](https://wordpress.org/plugins/wbounce/), a WordPress plugin. I personally have __not__ tested it, but have heard it works really well. Check it out.
 
 ### Miscellaneous
 
