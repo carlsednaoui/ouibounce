@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  </head>
+    <script src="../../build/ouibounce.js"></script>
+  </head>
+
+  <body>
+    <div id="ouibounce-modal"></div>
+
+    <script>
+      window.ouibounceFired = false;
+
+      window.modal = ouibounce(document.getElementById('ouibounce-modal'), {
+        aggressive: true,
+        callback: function() { window.ouibounceFired = true; }
+      });
+    </script>
+  </body>
+</html>
