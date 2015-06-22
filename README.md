@@ -1,5 +1,5 @@
 # Ouibounce
-> Originally created by [Carl Sednaoui](http://carlsednaoui.com/about?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui) from [MailCharts](http://www.mailcharts.com/?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui). Maintained and improved by a [generous contributors](https://github.com/carlsednaoui/ouibounce/graphs/contributors). 
+> Originally created by [Carl Sednaoui](http://carlsednaoui.com/about?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui) from [MailCharts](http://www.mailcharts.com/?utm_source=github&utm_medium=ouibounce-description&utm_campaign=carlsednaoui). Maintained and improved by [generous contributors](https://github.com/carlsednaoui/ouibounce/graphs/contributors). 
 
 
 
