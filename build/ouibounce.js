@@ -16,6 +16,7 @@ return function ouibounce(el, custom_config) {
   var config     = custom_config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
+    scrollSpeed  = setDefault(config.scrollSpeed, 1000),
     timer        = setDefault(config.timer, 1000),
     delay        = setDefault(config.delay, 0),
     callback     = config.callback || function() {},
@@ -24,6 +25,9 @@ return function ouibounce(el, custom_config) {
     cookieName   = config.cookieName ? config.cookieName : 'viewedOuibounceModal',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _delayTimer  = null,
+    _scrollTimer = null,
+    _scrollTime  = new Date().getTime(),
+    _scrollY     = window.scrollY,
     _html        = document.documentElement;
 
   function setDefault(_property, _default) {
@@ -45,30 +49,59 @@ return function ouibounce(el, custom_config) {
     if (isDisabled()) { return; }
 
     _html.addEventListener('mouseleave', handleMouseleave);
-    _html.addEventListener('mouseenter', handleMouseenter);
+    _html.addEventListener('mousemove', handleMousemove);
     _html.addEventListener('keydown', handleKeydown);
+    window.addEventListener('scroll', handleScroll);
   }
 
-  function handleMouseleave(e) {
-    if (e.clientY > sensitivity) { return; }
-
-    _delayTimer = setTimeout(fire, delay);
+  function fireDelayed() {
+    if (!_delayTimer) {
+      _delayTimer = setTimeout(fire, delay);
+    }
   }
 
-  function handleMouseenter() {
+  function abortFire() {
     if (_delayTimer) {
       clearTimeout(_delayTimer);
       _delayTimer = null;
     }
   }
 
-  var disableKeydown = false;
-  function handleKeydown(e) {
-    if (disableKeydown) { return; }
-    else if(!e.metaKey || e.keyCode !== 76) { return; }
+  function handleMouseleave(e) {
+    if (e.clientY <= sensitivity) {
+      fireDelayed();
+    }
+  }
 
-    disableKeydown = true;
-    _delayTimer = setTimeout(fire, delay);
+  function handleMousemove() {
+    abortFire();
+  }
+
+  function handleKeydown(e) {
+    if(e.metaKey && e.keyCode === 76) {
+      fireDelayed();
+    } else {
+      abortFire();
+    }
+  }
+
+  function handleScroll() {
+      if (!_scrollTimer) {
+        var scrollTime = new Date().getTime(),
+          scrollY      = window.scrollY;
+        _scrollTimer = setTimeout(function() {
+          _scrollTime = scrollTime;
+          _scrollY = scrollY;
+          _scrollTimer = null;
+        }, 10);
+      }
+      if (window.scrollY <= 0) {
+        if ((_scrollY - window.scrollY) / (new Date().getTime() - _scrollTime + 1) * 1000 >= scrollSpeed) {
+          fireDelayed();
+        }
+      } else {
+        abortFire();
+      }
   }
 
   function checkCookieValue(cookieName, value) {
@@ -131,8 +164,9 @@ return function ouibounce(el, custom_config) {
 
     // remove listeners
     _html.removeEventListener('mouseleave', handleMouseleave);
-    _html.removeEventListener('mouseenter', handleMouseenter);
+    _html.removeEventListener('mousemove', handleMousemove);
     _html.removeEventListener('keydown', handleKeydown);
+    window.removeEventListener('scroll', handleScroll);
   }
 
   return {
