@@ -6,6 +6,7 @@ function ouibounce(el, custom_config) {
     sensitivity  = setDefault(config.sensitivity, 20),
     timer        = setDefault(config.timer, 1000),
     delay        = setDefault(config.delay, 0),
+    canFire      = config.canFire || function() { return true; },
     callback     = config.callback || function() {},
     cookieExpire = setDefaultCookieExpire(config.cookieExpire) || '',
     cookieDomain = config.cookieDomain ? ';domain=' + config.cookieDomain : '',
@@ -82,7 +83,7 @@ function ouibounce(el, custom_config) {
   // You can use ouibounce without passing an element
   // https://github.com/carlsednaoui/ouibounce/issues/30
   function fire() {
-    if (isDisabled()) { return; }
+    if (isDisabled() || !canFire()) { return; }
 
     if (el) { el.style.display = 'block'; }
 
