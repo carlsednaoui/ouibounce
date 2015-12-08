@@ -24,7 +24,7 @@ return function ouibounce(el, custom_config) {
     cookieName   = config.cookieName ? config.cookieName : 'viewedOuibounceModal',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _delayTimer  = null,
-    _html        = document.documentElement;
+    _html        = config.html ? config.html : document.documentElement;
 
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
