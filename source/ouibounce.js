@@ -4,6 +4,7 @@ function ouibounce(el, custom_config) {
   var config     = custom_config || {},
     aggressive   = config.aggressive || false,
     sensitivity  = setDefault(config.sensitivity, 20),
+    detectEdges  = config.detectEdges || false,
     timer        = setDefault(config.timer, 1000),
     delay        = setDefault(config.delay, 0),
     callback     = config.callback || function() {},
@@ -38,7 +39,7 @@ function ouibounce(el, custom_config) {
   }
 
   function handleMouseleave(e) {
-    if (e.clientY > sensitivity) { return; }
+    if (inBounds(e)) { return; }
 
     _delayTimer = setTimeout(fire, delay);
   }
@@ -88,6 +89,22 @@ function ouibounce(el, custom_config) {
 
     callback();
     disable();
+  }
+
+  function inBounds(e) {
+    if (!detectEdges) {
+      return (e.clientY > sensitivity);
+    }
+
+    var height = window.innerHeight || _html.clientHeight,
+      width    = window.innerWidth || _html.clientWidth,
+      x        = e.clientX,
+      y        = e.clientY;
+
+    return !(y < sensitivity ||
+      y > height - sensitivity ||
+      x > width - sensitivity ||
+      x < sensitivity);
   }
 
   function disable(custom_options) {
