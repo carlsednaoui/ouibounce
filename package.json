@@ -1,6 +1,6 @@
 {
   "name": "ouibounce",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "Show some HTML before visitors leave your site.",
   "main": "build/ouibounce.js",
   "directories": {
