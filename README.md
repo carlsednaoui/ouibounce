@@ -83,6 +83,7 @@ Ouibounce offers a few options, such as:
 - [Timer](#set-a-min-time-before-ouibounce-fires)
 - [Delay](#delay)
 - [Callback](#callback)
+- [CanFire](#canFire)
 - [Cookie expiration](#cookie-expiration)
 - [Cookie domain](#cookie-domain)
 - [Cookie name](#cookie-name)
@@ -131,6 +132,15 @@ You can add a callback, which is a function that will run once Ouibounce has bee
 _Example:_    
 ```js
 ouibounce(document.getElementById('ouibounce-modal'), { callback: function() { console.log('Ouibounce fired!'); } });
+```
+
+##### Canfire
+You can add a callback with the `canFire` option, which will check if Ouibounce can be triggered.
+By default, this callback returns true;
+
+_Example:_    
+```js
+ouibounce(document.getElementById('ouibounce-modal'), { canFire: function() { console.log("Actually, I don't want to fire Ouibounce!"); return false; } });
 ```
 
 ##### Cookie expiration
