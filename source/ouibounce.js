@@ -82,7 +82,7 @@ function ouibounce(el, custom_config) {
   // You can use ouibounce without passing an element
   // https://github.com/carlsednaoui/ouibounce/issues/30
   function fire() {
-    if (isDisabled()) { return; }
+    if (isDisabled() || supressed) { return; }
 
     if (el) { el.style.display = 'block'; }
 
@@ -123,11 +123,18 @@ function ouibounce(el, custom_config) {
     _html.removeEventListener('keydown', handleKeydown);
   }
 
+  var supressed;
+  function suppress(value) {
+    supressed = value;
+  }
+
   return {
     fire: fire,
     disable: disable,
-    isDisabled: isDisabled
+    isDisabled: isDisabled,
+    suppress: suppress
   };
+
 }
 
 /*exported ouibounce */
