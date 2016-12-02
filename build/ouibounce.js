@@ -24,7 +24,8 @@ return function ouibounce(el, custom_config) {
     cookieName   = config.cookieName ? config.cookieName : 'viewedOuibounceModal',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _delayTimer  = null,
-    _html        = document.documentElement;
+    _html        = document.documentElement,
+    suppressed   = false;
 
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
@@ -94,7 +95,7 @@ return function ouibounce(el, custom_config) {
   // You can use ouibounce without passing an element
   // https://github.com/carlsednaoui/ouibounce/issues/30
   function fire() {
-    if (isDisabled()) { return; }
+    if (isDisabled() || suppressed) { return; }
 
     if (el) { el.style.display = 'block'; }
 
@@ -135,10 +136,15 @@ return function ouibounce(el, custom_config) {
     _html.removeEventListener('keydown', handleKeydown);
   }
 
+  function suppress(val) {
+    suppressed = val;
+  }
+
   return {
     fire: fire,
     disable: disable,
-    isDisabled: isDisabled
+    isDisabled: isDisabled,
+    suppress: suppress
   };
 }
 
