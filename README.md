@@ -82,12 +82,14 @@ Ouibounce offers a few options, such as:
 - [Aggressive mode](#aggressive-mode)
 - [Timer](#set-a-min-time-before-ouibounce-fires)
 - [Delay](#delay)
+- [Precondition](#precondition)
 - [Callback](#callback)
 - [Cookie expiration](#cookie-expiration)
 - [Cookie domain](#cookie-domain)
 - [Cookie name](#cookie-name)
 - [Sitewide cookie](#sitewide-cookie)
 - [Chaining options](#chaining-options)
+- [Precondition](#precondition)
 
 ##### Sensitivity
 Ouibounce fires when the mouse cursor moves close to (or passes) the top of the viewport. You can define how far the mouse has to be before Ouibounce fires. The higher value, the more sensitive, and the more quickly the event will fire. _Defaults to 20._
@@ -124,6 +126,19 @@ _Example:_
 // Wait 100 ms
 ouibounce(document.getElementById('ouibounce-modal'), { delay: 100 });
 ```
+
+##### Precondition
+You can add a precondition, which is a function that will run once Ouibounce has been triggered, by using the `precondition` option.
+The precondition allow you to prevent Ouibouce to show the modal if you don't want to.
+
+_Example:_    
+```js
+ouibounce(document.getElementById('ouibounce-modal'), { precondition: function() { 
+    console.log('Should Ouibounce be fired?'); }
+    return true; // Ouibounce is not fired if false
+});
+```
+
 
 ##### Callback
 You can add a callback, which is a function that will run once Ouibounce has been triggered, by using the `callback` option.
