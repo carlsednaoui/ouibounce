@@ -82,6 +82,7 @@ Ouibounce offers a few options, such as:
 - [Aggressive mode](#aggressive-mode)
 - [Timer](#set-a-min-time-before-ouibounce-fires)
 - [Delay](#delay)
+- [Precondition](#precondition)
 - [Callback](#callback)
 - [Cookie expiration](#cookie-expiration)
 - [Cookie domain](#cookie-domain)
@@ -124,6 +125,19 @@ _Example:_
 // Wait 100 ms
 ouibounce(document.getElementById('ouibounce-modal'), { delay: 100 });
 ```
+
+##### Precondition
+You can add a precondition, which is a function that will run once Ouibounce has been triggered, by using the `precondition` option.
+The precondition allow you to prevent Ouibouce to show the modal if you don't want to.
+
+_Example:_    
+```js
+ouibounce(document.getElementById('ouibounce-modal'), { precondition: function() { 
+    console.log('Should Ouibounce be fired?'); }
+    return true; // Ouibounce is not fired if false
+});
+```
+
 
 ##### Callback
 You can add a callback, which is a function that will run once Ouibounce has been triggered, by using the `callback` option.
