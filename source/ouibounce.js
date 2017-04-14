@@ -12,7 +12,8 @@ function ouibounce(el, custom_config) {
     cookieName   = config.cookieName ? config.cookieName : 'viewedOuibounceModal',
     sitewide     = config.sitewide === true ? ';path=/' : '',
     _delayTimer  = null,
-    _html        = document.documentElement;
+    _html        = document.documentElement,
+    preConditionCallback = config.precondition;
 
   function setDefault(_property, _default) {
     return typeof _property === 'undefined' ? _default : _property;
@@ -83,6 +84,8 @@ function ouibounce(el, custom_config) {
   // https://github.com/carlsednaoui/ouibounce/issues/30
   function fire() {
     if (isDisabled()) { return; }
+
+    if (preConditionCallback && typeof preConditionCallback === 'function' && !preConditionCallback()) { return; }
 
     if (el) { el.style.display = 'block'; }
 
