@@ -89,7 +89,6 @@ Ouibounce offers a few options, such as:
 - [Cookie name](#cookie-name)
 - [Sitewide cookie](#sitewide-cookie)
 - [Chaining options](#chaining-options)
-- [Precondition](#precondition)
 
 ##### Sensitivity
 Ouibounce fires when the mouse cursor moves close to (or passes) the top of the viewport. You can define how far the mouse has to be before Ouibounce fires. The higher value, the more sensitive, and the more quickly the event will fire. _Defaults to 20._
