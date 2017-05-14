@@ -86,8 +86,9 @@ function ouibounce(el, custom_config) {
 
     if (el) { el.style.display = 'block'; }
 
-    callback();
-    disable();
+    if (false !== callback()) {
+      disable();
+    }
   }
 
   function disable(custom_options) {
